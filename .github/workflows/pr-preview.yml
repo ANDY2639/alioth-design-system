@@ -34,7 +34,7 @@ jobs:
         id: deploy
         uses: nwtgck/actions-netlify@v3
         with:
-          publish-dir: "./.next"
+          publish-dir: "./out"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Preview Deploy for PR #${{ github.event.number }}"
