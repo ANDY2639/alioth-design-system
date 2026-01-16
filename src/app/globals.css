@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Configuración de Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,8 +11,99 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+
+  /* Colores Primarios - Alioth Design System */
+  --color-primary-50: #F2F7FC;
+  --color-primary-100: #E1EDF8;
+  --color-primary-200: #CADFF3;
+  --color-primary-300: #A5CBEB;
+  --color-primary-400: #7BAFDF;
+  --color-primary-500: #5B92D6;
+  --color-primary-600: #4779C9;
+  --color-primary-700: #3D65B8;
+  --color-primary-800: #375396;
+  --color-primary-900: #314877;
+  --color-primary-950: #1F2A44;
+
+   /* Colores Secundarios - Alioth Design System (Violet - Figma) */
+   --color-secondary-50: #ECEFFF;
+   --color-secondary-100: #DDE1FF;
+   --color-secondary-200: #C2C8FF;
+   --color-secondary-300: #9CA2FF;
+   --color-secondary-400: #7875FF;
+   --color-secondary-500: #6B5BFF;
+   --color-secondary-600: #5836F5;
+   --color-secondary-700: #4C2AD8;
+   --color-secondary-800: #3D25AE;
+   --color-secondary-900: #352689;
+   --color-secondary-950: #211650;
+
+   /* Colores de Éxito - Alioth Design System (Verde) */
+   --color-success-50: #F0FDF4;
+   --color-success-100: #DCFCE7;
+   --color-success-200: #BBF7D0;
+   --color-success-300: #86EFAC;
+   --color-success-400: #4ADE80;
+   --color-success-500: #22C55E;
+   --color-success-600: #16A34A;
+   --color-success-700: #15803D;
+   --color-success-800: #166534;
+   --color-success-900: #14532D;
+   --color-success-950: #052E16;
+
+   /* Colores de Advertencia - Alioth Design System (Amber - Figma) */
+   --color-warning-50: #FFFBEB;
+   --color-warning-100: #FEF3C7;
+   --color-warning-200: #FDE68A;
+   --color-warning-300: #FCD34D;
+   --color-warning-400: #FBBF24;
+   --color-warning-500: #F59E0B;
+   --color-warning-600: #D97706;
+   --color-warning-700: #B45309;
+   --color-warning-800: #92400E;
+   --color-warning-900: #78350F;
+   --color-warning-950: #451A03;
+
+   /* Colores de Error - Alioth Design System (Rojo - Figma) */
+   --color-error-50: #FEF2F2;
+   --color-error-100: #FEE2E2;
+   --color-error-200: #FECACA;
+   --color-error-300: #FCA5A5;
+   --color-error-400: #F87171;
+   --color-error-500: #EF4444;
+   --color-error-600: #DC2626;
+   --color-error-700: #B91C1C;
+   --color-error-800: #991B1B;
+   --color-error-900: #7F1D1D;
+   --color-error-950: #450A0A;
+
+   /* Colores de Información - Alioth Design System (Cyan - Figma) */
+   --color-info-50: #ECFEFF;
+   --color-info-100: #CFFAFE;
+   --color-info-200: #A5F3FC;
+   --color-info-300: #67E8F9;
+   --color-info-400: #22D3EE;
+   --color-info-500: #06B6D4;
+   --color-info-600: #0891B2;
+   --color-info-700: #0E7490;
+   --color-info-800: #155E75;
+   --color-info-900: #164E63;
+   --color-info-950: #083344;
+
+   /* Colores Neutrales - Alioth Design System (Grises - Figma) */
+   --color-neutral-50: #F7F9FA;
+   --color-neutral-100: #EDF0F2;
+   --color-neutral-200: #DDE1E4;
+   --color-neutral-300: #C2C7CB;
+   --color-neutral-400: #A5ABB1;
+   --color-neutral-500: #7F858C;
+   --color-neutral-600: #5E636A;
+   --color-neutral-700: #44484E;
+   --color-neutral-800: #2E3237;
+   --color-neutral-900: #222529;
+   --color-neutral-950: #1E1E1E;
 }
 
 @media (prefers-color-scheme: dark) {
