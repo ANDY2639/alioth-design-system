@@ -1,7 +1,7 @@
 'use client';
 
 import { useColorTheme } from '@/context/ColorContext';
-import { AVAILABLE_THEMES, ColorTheme } from '@/lib/colorPalettes';
+import { AVAILABLE_THEMES } from '@/lib/colorPalettes';
 
 export default function ColorPalettePicker() {
   const { colorTheme, setColorTheme } = useColorTheme();
@@ -15,7 +15,7 @@ export default function ColorPalettePicker() {
         {AVAILABLE_THEMES.map((theme) => (
           <button
             key={theme.id}
-            onClick={() => setColorTheme(theme.id as ColorTheme)}
+            onClick={() => setColorTheme(theme.id)}
             className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
               colorTheme === theme.id
                 ? 'ring-2 ring-offset-2 dark:ring-offset-neutral-900 ring-primary-500 bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100'

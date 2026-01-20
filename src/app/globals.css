@@ -12,110 +12,12 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
-  --font-mono: var(--font-geist-mono);
 
   /* ===========================
-     SPACING SCALE - Sistema de espaciado
-     Múltiplos de 4px para consistencia
+     COLORS
      =========================== */
 
-  --spacing-0: 0px;
-  --spacing-px: 1px;
-  --spacing-0\.5: 2px;      /* 0.125rem */
-  --spacing-1: 4px;         /* 0.25rem */
-  --spacing-1\.5: 6px;      /* 0.375rem */
-  --spacing-2: 8px;         /* 0.5rem */
-  --spacing-2\.5: 10px;     /* 0.625rem */
-  --spacing-3: 12px;        /* 0.75rem */
-  --spacing-3\.5: 14px;     /* 0.875rem */
-  --spacing-4: 16px;        /* 1rem */
-  --spacing-5: 20px;        /* 1.25rem */
-  --spacing-6: 24px;        /* 1.5rem */
-  --spacing-7: 28px;        /* 1.75rem */
-  --spacing-8: 32px;        /* 2rem */
-  --spacing-9: 36px;        /* 2.25rem */
-  --spacing-10: 40px;       /* 2.5rem */
-  --spacing-11: 44px;       /* 2.75rem */
-  --spacing-12: 48px;       /* 3rem */
-  --spacing-13: 52px;       /* 3.25rem */
-  --spacing-14: 56px;       /* 3.5rem */
-  --spacing-15: 60px;       /* 3.75rem */
-  --spacing-16: 64px;       /* 4rem */
-  --spacing-20: 80px;       /* 5rem */
-  --spacing-24: 96px;       /* 6rem */
-  --spacing-25: 100px;      /* 6.25rem */
-  --spacing-27: 108px;      /* 6.75rem */
-  --spacing-32: 128px;      /* 8rem */
-  --spacing-40: 160px;      /* 10rem */
-  --spacing-48: 192px;      /* 12rem */
-  --spacing-56: 224px;      /* 14rem */
-  --spacing-64: 256px;      /* 16rem */
-
-  /* ===========================
-     BORDER RADIUS - Bordes redondeados
-     =========================== */
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 14px;
-  --radius-full: 50%;
-
-  /* ===========================
-     BOX SHADOW - Sombras
-     =========================== */
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-
-  /* ===========================
-     FONT SIZES EXTENDIDOS - Tipografía adicional
-     =========================== */
-
-  /* Headings adicionales */
-  --font-size-heading1: 61px;
-  --font-size-heading2: 49px;
-  --font-size-heading3: 39px;
-  --font-size-heading4: 31px;
-  --font-size-heading5: 25px;
-  --font-size-heading6: 20px;
-
-  /* Body sizes adicionales */
-  --font-size-body1: 16px;
-  --font-size-body2: 14px;
-  --font-size-caption: 12px;
-
-  /* Tamaños extendidos */
-  --font-size-xs: 12px;
-  --font-size-xl: 20px;
-  --font-size-1xl: 22px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 28px;
-  --font-size-4xl: 30px;
-  --font-size-5xl: 48px;
-
-  /* Line Heights para tamaños extendidos */
-  --line-height-heading1: 79.3px;
-  --line-height-heading2: 63.7px;
-  --line-height-heading3: 50.7px;
-  --line-height-heading4: 43.4px;
-  --line-height-heading5: 35px;
-  --line-height-heading6: 28px;
-  --line-height-body1: 24px;
-  --line-height-body2: 19.5px;
-  --line-height-caption: 15px;
-  --line-height-xs: 16px;
-  --line-height-xl: 28px;
-  --line-height-1xl: 30.8px;
-  --line-height-2xl: 32px;
-  --line-height-3xl: 36px;
-  --line-height-4xl: 36px;
-  --line-height-5xl: 48px;
-
-  /* Colores Primarios - Alioth Design System */
+  /* Color Primary */
   --color-primary-50: #F2F7FC;
   --color-primary-100: #E1EDF8;
   --color-primary-200: #CADFF3;
@@ -128,7 +30,7 @@
   --color-primary-900: #314877;
   --color-primary-950: #1F2A44;
 
-  /* Colores Secundarios - Alioth Design System (Violet - Figma) */
+  /* Color Secondary */
   --color-secondary-50: #ECEFFF;
   --color-secondary-100: #DDE1FF;
   --color-secondary-200: #C2C8FF;
@@ -141,7 +43,7 @@
   --color-secondary-900: #352689;
   --color-secondary-950: #211650;
 
-  /* Colores de Éxito - Alioth Design System (Verde) */
+  /* Color Success */
   --color-success-50: #F0FDF4;
   --color-success-100: #DCFCE7;
   --color-success-200: #BBF7D0;
@@ -154,7 +56,7 @@
   --color-success-900: #14532D;
   --color-success-950: #052E16;
 
-  /* Colores de Advertencia - Alioth Design System (Amber - Figma) */
+  /* Color Warning */
   --color-warning-50: #FFFBEB;
   --color-warning-100: #FEF3C7;
   --color-warning-200: #FDE68A;
@@ -167,7 +69,7 @@
   --color-warning-900: #78350F;
   --color-warning-950: #451A03;
 
-  /* Colores de Error - Alioth Design System (Rojo - Figma) */
+  /* Color Error */
   --color-error-50: #FEF2F2;
   --color-error-100: #FEE2E2;
   --color-error-200: #FECACA;
@@ -180,7 +82,7 @@
   --color-error-900: #7F1D1D;
   --color-error-950: #450A0A;
 
-  /* Colores de Información - Alioth Design System (Cyan - Figma) */
+  /* Color Info */
   --color-info-50: #ECFEFF;
   --color-info-100: #CFFAFE;
   --color-info-200: #A5F3FC;
@@ -193,7 +95,7 @@
   --color-info-900: #164E63;
   --color-info-950: #083344;
 
-  /* Colores Neutrales - Alioth Design System (Grises - Figma) */
+  /* Color Neutral */
   --color-neutral-50: #F7F9FA;
   --color-neutral-100: #EDF0F2;
   --color-neutral-200: #DDE1E4;
@@ -205,6 +107,61 @@
   --color-neutral-800: #2E3237;
   --color-neutral-900: #222529;
   --color-neutral-950: #1E1E1E;
+
+  /* ===========================
+     SPACING SCALE
+     =========================== */
+
+  --spacing-0: 0;
+  --spacing-px: 1px;
+  --spacing-0\.5: 2px;      /* 0.125rem */
+  --spacing-1\.5: 6px;      /* 0.375rem */
+  --spacing-2\.5: 10px;     /* 0.625rem */
+  --spacing-3\.5: 14px;     /* 0.875rem */
+
+  /* ===========================
+     BORDER RADIUS
+     =========================== */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* ===========================
+     BOX SHADOW
+     =========================== */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* ===========================
+     FONT SIZES EXTENDIDOS
+     =========================== */
+
+  --text-heading1: 40px;
+  --text-heading1--line-height: 1.2;
+  --text-heading2: 32px;
+  --text-heading2--line-height: 1.2;
+  --text-heading3: 28px;
+  --text-heading3--line-height: 1.3;
+  --text-heading4: 24px;
+  --text-heading4--line-height: 1.3;
+  --text-heading5: 20px;
+  --text-heading5--line-height: 1.4;
+  --text-heading6: 16px;
+  --text-heading6--line-height: 1.4;
+  --text-body1: 14px;
+  --text-body1--line-height: 1.5;
+  --text-body2: 14px;
+  --text-body2--line-height: 1.5;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -217,96 +174,4 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ===========================
-   UTILIDADES PERSONALIZADAS - Typography Extended
-   =========================== */
-
-/* Font Size Utilities - Headings Extendidos */
-@utility text-heading1 {
-  font-size: var(--font-size-heading1);
-  line-height: var(--line-height-heading1);
-}
-
-@utility text-heading2 {
-  font-size: var(--font-size-heading2);
-  line-height: var(--line-height-heading2);
-}
-
-@utility text-heading3 {
-  font-size: var(--font-size-heading3);
-  line-height: var(--line-height-heading3);
-}
-
-@utility text-heading4 {
-  font-size: var(--font-size-heading4);
-  line-height: var(--line-height-heading4);
-}
-
-@utility text-heading5 {
-  font-size: var(--font-size-heading5);
-  line-height: var(--line-height-heading5);
-}
-
-@utility text-heading6 {
-  font-size: var(--font-size-heading6);
-  line-height: var(--line-height-heading6);
-}
-
-/* Font Size Utilities - Body Extendidos */
-@utility text-body1 {
-  font-size: var(--font-size-body1);
-  line-height: var(--line-height-body1);
-}
-
-@utility text-body2 {
-  font-size: var(--font-size-body2);
-  line-height: var(--line-height-body2);
-}
-
-/* Font Size Utilities - Tamaños Extendidos */
-@utility text-xs {
-  font-size: var(--font-size-xs);
-  line-height: var(--line-height-xs);
-}
-
-@utility text-xl {
-  font-size: var(--font-size-xl);
-  line-height: var(--line-height-xl);
-}
-
-@utility text-1xl {
-  font-size: var(--font-size-1xl);
-  line-height: var(--line-height-1xl);
-}
-
-@utility text-2xl {
-  font-size: var(--font-size-2xl);
-  line-height: var(--line-height-2xl);
-}
-
-@utility text-3xl {
-  font-size: var(--font-size-3xl);
-  line-height: var(--line-height-3xl);
-}
-
-@utility text-4xl {
-  font-size: var(--font-size-4xl);
-  line-height: var(--line-height-4xl);
-}
-
-@utility text-5xl {
-  font-size: var(--font-size-5xl);
-  line-height: var(--line-height-5xl);
-}
-
-/* Font Weight Utilities Extendidos */
-@utility font-extrabold {
-  font-weight: var(--font-weight-extrabold);
-}
-
-@utility font-black {
-  font-weight: var(--font-weight-black);
 }

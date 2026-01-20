@@ -1,10 +1,10 @@
 import { ReactNode, createElement } from 'react';
 
 /**
- * Heading Component - Sistema tipográfico Alioth
+ * Heading Component - Alioth Typography System
  *
- * Componente reutilizable para encabezados (H1-H6).
- * Soporta variantes de peso: light, regular, semibold, bold.
+ * Reusable component for headings (H1-H6).
+ * Supports weight variants: light, regular, semibold, bold.
  *
  * @example
  * <Heading level={1}>Dashboard general de proyectos</Heading>
@@ -13,24 +13,15 @@ import { ReactNode, createElement } from 'react';
  */
 
 export interface HeadingProps {
-  /** Nivel del encabezado (1-6) */
+  /** Heading level (1-6) */
   level: 1 | 2 | 3 | 4 | 5 | 6;
-  /** Variante de peso de fuente */
+  /** Font weight variant */
   variant?: 'light' | 'regular' | 'semibold' | 'bold';
-  /** Contenido del encabezado */
+  /** Heading content */
   children: ReactNode;
-  /** Clases adicionales */
+  /** Additional classes */
   className?: string;
 }
-
-const headingStyles = {
-  1: 'text-[40px] leading-[1.2]',
-  2: 'text-[32px] leading-[1.2]',
-  3: 'text-[28px] leading-[1.3]',
-  4: 'text-[24px] leading-[1.3]',
-  5: 'text-[20px] leading-[1.4]',
-  6: 'text-[16px] leading-[1.4]',
-};
 
 const headingWeights = {
   1: 'font-bold', // 700
@@ -50,11 +41,11 @@ const variantWeights = {
 
 export const Heading = ({ level, variant, children, className = '' }: HeadingProps) => {
   const tag = `h${level}`;
-  const baseClasses = headingStyles[level];
+  const textHeading = `text-heading${level}`;
   const weightClass = variant ? variantWeights[variant] : headingWeights[level];
 
   const classes = [
-    baseClasses,
+    textHeading,
     weightClass,
     'text-neutral-900 dark:text-neutral-100',
     className,

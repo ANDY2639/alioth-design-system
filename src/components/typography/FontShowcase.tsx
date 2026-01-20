@@ -1,6 +1,7 @@
 'use client';
 
 import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from '@/lib/typography';
+import Heading from './Heading';
 
 /**
  * FontShowcase - Documentación visual del sistema tipográfico Alioth
@@ -16,9 +17,9 @@ export default function FontShowcase() {
     <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 transition-colors duration-300 space-y-12">
       {/* Header */}
       <header className="border-b border-neutral-200 dark:border-neutral-700 pb-6">
-        <h1 className="text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+        <Heading level={1} className='text-neutral-900 dark:text-neutral-100 mb-2'>
           🅰️ Tipografía
-        </h1>
+        </Heading>
         <p className="text-lg text-neutral-600 dark:text-neutral-400">
           Fuente Principal: Poppins - Sistema tipográfico Alioth Design System
         </p>
@@ -26,9 +27,9 @@ export default function FontShowcase() {
 
       {/* Sección 1: Headings - Estilos Base */}
       <section>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+        <Heading level={2} className='text-neutral-900 dark:text-neutral-100 mb-6'>
           Headings - Estilos Base
-        </h2>
+        </Heading>
         <div className="space-y-6">
           {Object.entries(TYPOGRAPHY_CONFIG.headings).map(([key, style]) => (
             <div
@@ -80,9 +81,9 @@ export default function FontShowcase() {
 
       {/* Sección 2: Body - Estilos Base */}
       <section>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+        <Heading level={2} className='text-neutral-900 dark:text-neutral-100 mb-6'>
           Body - Estilos Base
-        </h2>
+        </Heading>
         <div className="space-y-6">
           {Object.entries(TYPOGRAPHY_CONFIG.body).map(([key, style]) => (
             <div
@@ -134,18 +135,18 @@ export default function FontShowcase() {
 
       {/* Sección 3: Variantes Funcionales */}
       <section>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+        <Heading level={2} className='text-neutral-900 dark:text-neutral-100 mb-4'>
           Variantes Funcionales
-        </h2>
+        </Heading>
         <p className="text-neutral-600 dark:text-neutral-400 mb-6">
           Usamos para apoyar jerarquías o adaptarnos a casos especiales.
         </p>
 
         {/* Headings Variants */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Headings - Variantes
-          </h3>
+          </Heading>
           <div className="space-y-4">
             {Object.entries(TYPOGRAPHY_CONFIG.headings).map(([key, style]) =>
               style.variants?.map((variant, index) => (
@@ -153,7 +154,7 @@ export default function FontShowcase() {
                   key={`${key}-variant-${index}`}
                   className="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700"
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="flex justify-between items-start font-bold">
                     <div>
                       <p className="font-semibold text-neutral-900 dark:text-neutral-100">
                         {variant.name}
@@ -174,9 +175,9 @@ export default function FontShowcase() {
 
         {/* Body Variants */}
         <div>
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Body - Variantes
-          </h3>
+          </Heading>
           <div className="space-y-4">
             {Object.entries(TYPOGRAPHY_CONFIG.body).map(([key, style]) =>
               style.variants?.map((variant, index) => (
@@ -206,15 +207,15 @@ export default function FontShowcase() {
 
       {/* Sección 4: Ejemplos de Uso Real */}
       <section>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+        <Heading level={2} className='text-neutral-900 dark:text-neutral-100 mb-6'>
           🖋 Ejemplos de Uso Tipográfico
-        </h2>
+        </Heading>
 
         {/* Encabezados */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Encabezados
-          </h3>
+          </Heading>
           <div className="space-y-6">
             {TYPOGRAPHY_USE_CASES.headings.map((item, index) => (
               <div
@@ -246,9 +247,9 @@ export default function FontShowcase() {
 
         {/* Párrafos */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Párrafos
-          </h3>
+          </Heading>
           <div className="space-y-6">
             {TYPOGRAPHY_USE_CASES.paragraphs.map((item, index) => (
               <div
@@ -280,15 +281,15 @@ export default function FontShowcase() {
 
         {/* Listas */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Listas
-          </h3>
+          </Heading>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Lista Ordenada */}
             <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50">
-              <h4 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+              <Heading level={4} className='text-neutral-900 dark:text-neutral-100 mb-2'>
                 {TYPOGRAPHY_USE_CASES.lists.ordered.title}
-              </h4>
+              </Heading>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
                 {TYPOGRAPHY_USE_CASES.lists.ordered.context}
               </p>
@@ -303,9 +304,9 @@ export default function FontShowcase() {
 
             {/* Lista No Ordenada */}
             <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50">
-              <h4 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+              <Heading level={4} className='text-neutral-900 dark:text-neutral-100 mb-2'>
                 {TYPOGRAPHY_USE_CASES.lists.unordered.title}
-              </h4>
+              </Heading>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
                 {TYPOGRAPHY_USE_CASES.lists.unordered.context}
               </p>
@@ -322,9 +323,9 @@ export default function FontShowcase() {
 
         {/* Enlaces */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Enlaces
-          </h3>
+          </Heading>
           <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50">
             <p className="text-sm text-neutral-900 dark:text-neutral-100 mb-4">
               {TYPOGRAPHY_USE_CASES.links.example}
@@ -342,9 +343,9 @@ export default function FontShowcase() {
 
         {/* Notas / Informativos */}
         <div>
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             Notas / Informativos
-          </h3>
+          </Heading>
           <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50">
             <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
               Uso: {TYPOGRAPHY_USE_CASES.notes.context}
@@ -366,16 +367,16 @@ export default function FontShowcase() {
 
       {/* Sección 5: Condiciones de Uso */}
       <section>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+        <Heading level={2} className='text-neutral-900 dark:text-neutral-100 mb-6'>
           Condiciones de Uso Correcto
-        </h2>
+        </Heading>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Cuándo SÍ usarlo */}
           <div className="p-6 rounded-lg border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20">
-            <h3 className="text-lg font-semibold text-green-900 dark:text-green-100 mb-4">
+            <Heading level={3} className='text-green-900 dark:text-green-100 mb-4'>
               ✔️ Cuándo SÍ usarlo
-            </h3>
+            </Heading>
             <ul className="list-disc list-inside space-y-2 text-sm text-green-800 dark:text-green-200">
               {TYPOGRAPHY_GUIDELINES.when_to_use.map((item, index) => (
                 <li key={index}>{item}</li>
@@ -385,9 +386,9 @@ export default function FontShowcase() {
 
           {/* Cuándo NO usarlo */}
           <div className="p-6 rounded-lg border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20">
-            <h3 className="text-lg font-semibold text-red-900 dark:text-red-100 mb-4">
+            <Heading level={3} className='text-red-900 dark:text-red-100 mb-4'>
               ❌ Cuándo NO usarlo
-            </h3>
+            </Heading>
             <ul className="list-disc list-inside space-y-2 text-sm text-red-800 dark:text-red-200">
               {TYPOGRAPHY_GUIDELINES.when_not_to_use.map((item, index) => (
                 <li key={index}>{item}</li>
@@ -398,9 +399,9 @@ export default function FontShowcase() {
 
         {/* Principios */}
         <div className="mt-6 p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50">
-          <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+          <Heading level={3} className='text-neutral-900 dark:text-neutral-100 mb-4'>
             🧪 Principios de Font-Size y Line-Height
-          </h3>
+          </Heading>
           <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
             <p>
               <span className="font-semibold text-neutral-900 dark:text-neutral-100">Font Size:</span>{' '}
@@ -421,9 +422,9 @@ export default function FontShowcase() {
       {/* Footer / Conclusión */}
       <footer className="border-t border-neutral-200 dark:border-neutral-700 pt-6">
         <div className="p-6 rounded-lg bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800">
-          <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100 mb-2">
+          <Heading level={3} className='text-primary-900 dark:text-primary-100 mb-2'>
             👉 Conclusión
-          </h3>
+          </Heading>
           <p className="text-sm text-primary-800 dark:text-primary-200">
             La tipografía establece la estructura visual del producto, guiando la lectura y garantizando claridad,
             consistencia y accesibilidad en todas las interfaces.

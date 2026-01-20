@@ -1,10 +1,10 @@
 import { ReactNode, createElement } from 'react';
 
 /**
- * Body Component - Sistema tipográfico Alioth
+ * Body Component - Alioth Typographic System
  *
- * Componente reutilizable para texto body (Body1, Body2).
- * Soporta variantes de peso: light, regular, medium, semibold.
+ * Reusable component for body text (Body1, Body2).
+ * Supports weight variants: light, regular, medium, semibold.
  *
  * @example
  * <Body type="body1">Este módulo permite gestionar proveedores...</Body>
@@ -13,21 +13,21 @@ import { ReactNode, createElement } from 'react';
  */
 
 export interface BodyProps {
-  /** Tipo de body text */
+  /** Body type */
   type?: 'body1' | 'body2';
-  /** Variante de peso de fuente */
+  /** Font weight variant */
   variant?: 'light' | 'regular' | 'medium' | 'semibold';
-  /** Contenido del texto */
+  /** Text content */
   children: ReactNode;
-  /** Clases adicionales */
+  /** Additional classes */
   className?: string;
-  /** Elemento HTML a renderizar (default: 'p') */
+  /** HTML element to render (default: 'p') */
   as?: 'p' | 'span' | 'div';
 }
 
 const bodyStyles = {
-  body1: 'text-[14px] leading-[1.5]',
-  body2: 'text-[14px] leading-[1.5]',
+  body1: 'text-body1',
+  body2: 'text-body2',
 };
 
 const bodyWeights = {

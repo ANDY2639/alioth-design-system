@@ -1,10 +1,11 @@
 'use client';
 
+import { useColorTheme } from '@/context/ColorContext';
 import { AVAILABLE_THEMES, COLOR_PALETTES, ColorTheme } from '@/lib/colorPalettes';
 import { useEffect, useRef, useState } from 'react';
 
 export default function ColorSelector() {
-  const [colorTheme, setColorThemeState] = useState<ColorTheme>('primary');
+  const { colorTheme, setColorTheme } = useColorTheme();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -13,10 +14,10 @@ export default function ColorSelector() {
     // Cargar tema del localStorage al montar
     const savedTheme = localStorage.getItem('alioth-color-theme') as ColorTheme | null;
     if (savedTheme) {
-      setColorThemeState(savedTheme);
+      setColorTheme(savedTheme);
     }
     setMounted(true);
-  }, []);
+  }, [setColorTheme]);
 
   useEffect(() => {
     // Cerrar el dropdown al hacer click fuera
@@ -32,8 +33,8 @@ export default function ColorSelector() {
     }
   }, [isOpen]);
 
-  const setColorTheme = (theme: ColorTheme) => {
-    setColorThemeState(theme);
+  const setColorThemeState = (theme: ColorTheme) => {
+    setColorTheme(theme);
     localStorage.setItem('alioth-color-theme', theme);
     window.dispatchEvent(new CustomEvent('color-theme-change', { detail: theme }));
     setIsOpen(false);
@@ -96,7 +97,7 @@ export default function ColorSelector() {
             return (
               <button
                 key={theme.id}
-                onClick={() => setColorTheme(theme.id as ColorTheme)}
+                onClick={() => setColorThemeState(theme.id)}
                 className={`w-full px-4 py-3 flex items-center gap-2 text-left
                   transition-all duration-150
                   ${

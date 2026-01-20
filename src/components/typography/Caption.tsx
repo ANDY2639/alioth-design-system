@@ -1,10 +1,10 @@
 import { ReactNode, createElement } from 'react';
 
 /**
- * Caption Component - Sistema tipográfico Alioth
+ * Caption Component - Alioth Typographic System
  *
- * Componente reutilizable para texto caption (notas, información secundaria).
- * Tamaño fijo de 12px con line-height de 150%.
+ * Reusable component for caption text (notes, secondary information).
+ * Fixed size of 12px with 150% line-height.
  *
  * @example
  * <Caption>Última actualización hace 5 minutos.</Caption>
@@ -12,18 +12,17 @@ import { ReactNode, createElement } from 'react';
  */
 
 export interface CaptionProps {
-  /** Contenido del caption */
+  /** Caption content */
   children: ReactNode;
-  /** Clases adicionales */
+  /** Additional classes */
   className?: string;
-  /** Elemento HTML a renderizar (default: 'p') */
+  /** HTML element to render (default: 'p') */
   as?: 'p' | 'span' | 'div';
 }
 
 export const Caption = ({ children, className = '', as = 'p' }: CaptionProps) => {
   const classes = [
-    'text-[12px]',
-    'leading-[1.5]',
+    'text-caption',
     'font-normal',
     'text-neutral-600 dark:text-neutral-400',
     className,
