@@ -1,7 +1,7 @@
 "use client";
 
-import { HeroUIProvider } from "@heroui/react";
 import { ColorProvider } from "@/context/ColorContext";
+import { HeroUIProvider } from "@heroui/react";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (

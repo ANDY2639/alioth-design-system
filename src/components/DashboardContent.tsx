@@ -2,8 +2,8 @@
 
 import { useState, Suspense } from "react";
 import dynamic from "next/dynamic";
-import Sidebar from "@/components/layout/Sidebar";
 import MainLayout from "@/components/layout/MainLayout";
+import Sidebar from "@/components/layout/Sidebar";
 
 // Dynamic imports with ssr: false to prevent hydration mismatches
 const ColorPalettePicker = dynamic(() => import("@/components/color-system/ColorPalettePicker"), {

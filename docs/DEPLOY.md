@@ -2,7 +2,7 @@
 
 ## 📋 Información del Sitio Netlify
 
-```
+```-
 ✅ Sitio: alioth-design-system
 ✅ Team: andy2639tds
 ✅ Site ID: 227b77df-14a0-4d55-a3d5-157b400e8100
@@ -16,14 +16,14 @@
 
 Para que los workflows funcionen, debes agregar estos secretos en tu repositorio:
 
-### Pasos:
+### Pasos
 
 1. Ve a tu repositorio en GitHub
 2. Click en **Settings** → **Secrets and variables** → **Actions**
 3. Click en **New repository secret**
 4. Agrega los siguientes secretos:
 
-```
+```-
 Nombre: NETLIFY_SITE_ID
 Valor: 227b77df-14a0-4d55-a3d5-157b400e8100
 
@@ -72,7 +72,7 @@ Valor: nfp_fZdFVdFehqsKhUT2na6Pt9TcaZoYRHbq1ef1
 
 ## 🔄 Flujo de Trabajo
 
-```
+```-
 ┌─────────────────────────────────────────┐
 │  Developer abre PR en master           │
 └───────────┬─────────────────────────────┘
@@ -246,7 +246,7 @@ Antes de tu primer deploy, asegúrate de:
 - [ ] PR creado para probar preview deploy
 - [ ] Verificar que preview URL funciona
 - [ ] Mergear a master para deploy a producción
-- [ ] Verificar que producción funciona en https://alioth-design-system.netlify.app
+- [ ] Verificar que producción funciona en <https://alioth-design-system.netlify.app>
 
 ---
 

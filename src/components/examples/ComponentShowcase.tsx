@@ -1,9 +1,9 @@
 "use client";
 
-import DemoButton from "./DemoButton";
-import DemoBadge from "./DemoBadge";
-import DemoCard from "./DemoCard";
 import { Button } from "@heroui/react";
+import DemoBadge from "./DemoBadge";
+import DemoButton from "./DemoButton";
+import DemoCard from "./DemoCard";
 
 export default function ComponentShowcase() {
   return (

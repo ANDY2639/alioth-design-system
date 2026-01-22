@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useColorTheme } from "@/context/ColorContext";
 import { AVAILABLE_THEMES, COLOR_PALETTES, ColorTheme } from "@/lib/colorPalettes";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function ColorSelector() {
   const { colorTheme, setColorTheme } = useColorTheme();
