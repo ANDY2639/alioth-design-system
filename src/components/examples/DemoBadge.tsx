@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useColorTheme } from '@/context/ColorContext';
-import { COLOR_PALETTES, ColorTheme } from '@/lib/colorPalettes';
+import { useColorTheme } from "@/context/ColorContext";
+import { COLOR_PALETTES, ColorTheme } from "@/lib/colorPalettes";
 
 export default function DemoBadge() {
   const { colorTheme } = useColorTheme();

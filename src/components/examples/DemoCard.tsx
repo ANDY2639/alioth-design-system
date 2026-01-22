@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useColorTheme } from '@/context/ColorContext';
-import { COLOR_PALETTES, ColorTheme } from '@/lib/colorPalettes';
+import { useColorTheme } from "@/context/ColorContext";
+import { COLOR_PALETTES, ColorTheme } from "@/lib/colorPalettes";
 
 export default function DemoCard() {
   const { colorTheme } = useColorTheme();
@@ -24,21 +24,12 @@ export default function DemoCard() {
       }}
     >
       <div className="flex items-start gap-3 mb-3">
-        <div
-          className="w-3 h-3 rounded-full flex-shrink-0 mt-1.5"
-          style={{ backgroundColor: baseColor }}
-        />
-        <h3
-          className="text-lg font-semibold"
-          style={{ color: titleColor }}
-        >
+        <div className="w-3 h-3 rounded-full shrink-0 mt-1.5" style={{ backgroundColor: baseColor }} />
+        <h3 className="text-lg font-semibold" style={{ color: titleColor }}>
           Tarjeta {palette.name}
         </h3>
       </div>
-      <p
-        className="text-sm"
-        style={{ color: textColor }}
-      >
+      <p className="text-sm" style={{ color: textColor }}>
         Esta es una tarjeta de demostración que cambia de color según la paleta seleccionada.
       </p>
     </div>

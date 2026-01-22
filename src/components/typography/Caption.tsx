@@ -1,4 +1,4 @@
-import { ReactNode, createElement } from 'react';
+import { ReactNode, createElement } from "react";
 
 /**
  * Caption Component - Alioth Typographic System
@@ -17,18 +17,11 @@ export interface CaptionProps {
   /** Additional classes */
   className?: string;
   /** HTML element to render (default: 'p') */
-  as?: 'p' | 'span' | 'div';
+  as?: "p" | "span" | "div";
 }
 
-export const Caption = ({ children, className = '', as = 'p' }: CaptionProps) => {
-  const classes = [
-    'text-caption',
-    'font-normal',
-    'text-neutral-600 dark:text-neutral-400',
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+export const Caption = ({ children, className = "", as = "p" }: CaptionProps) => {
+  const classes = ["text-caption", "font-normal", "text-neutral-600 dark:text-neutral-400", className].filter(Boolean).join(" ");
 
   return createElement(as, { className: classes }, children);
 };

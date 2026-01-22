@@ -188,111 +188,47 @@ Todas las variables están definidas en `src/app/globals.css`:
 
 ```css
 /* Font Sizes - Base */
---font-size-h1: 40px
---font-size-h2: 32px
---font-size-h3: 28px
---font-size-h4: 24px
---font-size-h5: 20px
---font-size-h6: 16px
---font-size-body: 14px
---font-size-caption: 12px
-
-/* Line Heights - Base */
---line-height-heading: 1.2      /* 120% */
---line-height-heading-md: 1.3   /* 130% */
---line-height-heading-lg: 1.4   /* 140% */
---line-height-body: 1.5         /* 150% */
-
-/* Font Weights - Base */
---font-weight-light: 300
---font-weight-regular: 400
---font-weight-medium: 500
---font-weight-semibold: 600
---font-weight-bold: 700
+--font-size-h1: 40px --font-size-h2: 32px --font-size-h3: 28px --font-size-h4: 24px --font-size-h5: 20px --font-size-h6: 16px --font-size-body: 14px
+  --font-size-caption: 12px /* Line Heights - Base */ --line-height-heading: 1.2 /* 120% */ --line-height-heading-md: 1.3 /* 130% */
+  --line-height-heading-lg: 1.4 /* 140% */ --line-height-body: 1.5 /* 150% */ /* Font Weights - Base */ --font-weight-light: 300
+  --font-weight-regular: 400 --font-weight-medium: 500 --font-weight-semibold: 600 --font-weight-bold: 700;
 ```
 
 ### **Tipografía Extendida - Sistema Completo**
 
 ```css
 /* Font Sizes - Headings Extendidos */
---font-size-heading1: 61px      /* text-heading1 */
---font-size-heading2: 49px      /* text-heading2 */
---font-size-heading3: 39px      /* text-heading3 */
---font-size-heading4: 31px      /* text-heading4 */
---font-size-heading5: 25px      /* text-heading5 */
---font-size-heading6: 20px      /* text-heading6 */
---font-size-heading7: 18px      /* text-heading7 */
-
-/* Font Sizes - Body Extendidos */
---font-size-body1: 16px         /* text-body1 */
---font-size-body2: 13px         /* text-body2 */
-
-/* Font Sizes - Tamaños Adicionales */
---font-size-xs: 12px            /* text-xs */
---font-size-xl: 20px            /* text-xl */
---font-size-1xl: 22px           /* text-1xl */
---font-size-2xl: 24px           /* text-2xl */
---font-size-3xl: 28px           /* text-3xl */
---font-size-4xl: 30px           /* text-4xl */
---font-size-5xl: 48px           /* text-5xl */
-
-/* Font Weights - Extendidos */
---font-weight-extrabold: 800    /* font-extrabold */
---font-weight-black: 900        /* font-black */
+--font-size-heading1: 61px /* text-heading1 */ --font-size-heading2: 49px /* text-heading2 */ --font-size-heading3: 39px /* text-heading3 */
+  --font-size-heading4: 31px /* text-heading4 */ --font-size-heading5: 25px /* text-heading5 */ --font-size-heading6: 20px /* text-heading6 */
+  --font-size-heading7: 18px /* text-heading7 */ /* Font Sizes - Body Extendidos */ --font-size-body1: 16px /* text-body1 */ --font-size-body2: 13px
+  /* text-body2 */ /* Font Sizes - Tamaños Adicionales */ --font-size-xs: 12px /* text-xs */ --font-size-xl: 20px /* text-xl */ --font-size-1xl: 22px
+  /* text-1xl */ --font-size-2xl: 24px /* text-2xl */ --font-size-3xl: 28px /* text-3xl */ --font-size-4xl: 30px /* text-4xl */ --font-size-5xl: 48px
+  /* text-5xl */ /* Font Weights - Extendidos */ --font-weight-extrabold: 800 /* font-extrabold */ --font-weight-black: 900 /* font-black */;
 ```
 
 ### **Spacing Scale - Múltiplos de 4px**
 
 ```css
 /* Sistema de Espaciado (p-*, m-*, gap-*, etc.) */
---spacing-0: 0px
---spacing-px: 1px
---spacing-0.5: 2px
---spacing-1: 4px               /* gap-1, p-1, m-1 */
---spacing-2: 8px               /* gap-2, p-2, m-2 */
---spacing-3: 12px              /* gap-3, p-3, m-3 */
---spacing-4: 16px              /* gap-4, p-4, m-4 */
---spacing-5: 20px
---spacing-6: 24px
---spacing-7: 28px
---spacing-8: 32px
---spacing-9: 36px
---spacing-10: 40px
---spacing-11: 44px
---spacing-12: 48px
---spacing-13: 52px
---spacing-14: 56px
---spacing-15: 60px
---spacing-16: 64px
---spacing-20: 80px
---spacing-24: 96px
---spacing-25: 100px
---spacing-27: 108px
---spacing-32: 128px
---spacing-40: 160px
---spacing-48: 192px
---spacing-56: 224px
---spacing-64: 256px
+--spacing-0: 0px --spacing-px: 1px --spacing-0.5: 2px --spacing-1: 4px /* gap-1, p-1, m-1 */ --spacing-2: 8px /* gap-2, p-2, m-2 */ --spacing-3: 12px
+  /* gap-3, p-3, m-3 */ --spacing-4: 16px /* gap-4, p-4, m-4 */ --spacing-5: 20px --spacing-6: 24px --spacing-7: 28px --spacing-8: 32px
+  --spacing-9: 36px --spacing-10: 40px --spacing-11: 44px --spacing-12: 48px --spacing-13: 52px --spacing-14: 56px --spacing-15: 60px
+  --spacing-16: 64px --spacing-20: 80px --spacing-24: 96px --spacing-25: 100px --spacing-27: 108px --spacing-32: 128px --spacing-40: 160px
+  --spacing-48: 192px --spacing-56: 224px --spacing-64: 256px;
 ```
 
 ### **Border Radius - Bordes Redondeados**
 
 ```css
---radius-sm: 8px               /* rounded-sm */
---radius-md: 12px              /* rounded-md */
---radius-lg: 14px              /* rounded-lg */
---radius-full: 50%             /* rounded-full */
+--radius-sm: 8px /* rounded-sm */ --radius-md: 12px /* rounded-md */ --radius-lg: 14px /* rounded-lg */ --radius-full: 50% /* rounded-full */;
 ```
 
 ### **Box Shadow - Sombras**
 
 ```css
---shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05)           /* shadow-sm */
---shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1)            /* shadow-md */
---shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1)          /* shadow-lg */
---shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1)          /* shadow-xl */
---shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25)        /* shadow-2xl */
---shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05)  /* shadow-inner */
+--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05) /* shadow-sm */ --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1) /* shadow-md */ --shadow-lg: 0 10px 15px
+  rgba(0, 0, 0, 0.1) /* shadow-lg */ --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1) /* shadow-xl */ --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25)
+  /* shadow-2xl */ --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05) /* shadow-inner */;
 ```
 
 ---
@@ -302,7 +238,7 @@ Todas las variables están definidas en `src/app/globals.css`:
 La configuración completa está en `src/lib/typography.ts`:
 
 ```tsx
-import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from '@/lib/typography';
+import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from "@/lib/typography";
 
 // Acceder a configuración de H1
 const h1Config = TYPOGRAPHY_CONFIG.headings.h1;
@@ -385,7 +321,7 @@ const guidelines = TYPOGRAPHY_GUIDELINES;
 ### Página de Dashboard
 
 ```tsx
-import { Heading, Body, Caption, Link } from '@/components/typography';
+import { Heading, Body, Caption, Link } from "@/components/typography";
 
 export default function Dashboard() {
   return (
@@ -397,10 +333,7 @@ export default function Dashboard() {
       <Heading level={2}>Resumen de actividades</Heading>
 
       {/* Descripción */}
-      <Body type="body1">
-        Este módulo permite gestionar proveedores, revisar documentos 
-        y controlar el avance del PPM.
-      </Body>
+      <Body type="body1">Este módulo permite gestionar proveedores, revisar documentos y controlar el avance del PPM.</Body>
 
       {/* Subsección */}
       <Heading level={3}>Proyectos activos</Heading>
@@ -418,16 +351,14 @@ export default function Dashboard() {
 ### Formulario
 
 ```tsx
-import { Heading, Body, Caption, Note } from '@/components/typography';
+import { Heading, Body, Caption, Note } from "@/components/typography";
 
 export default function Form() {
   return (
     <form>
       <Heading level={4}>Información del proveedor</Heading>
 
-      <Note variant="info">
-        Nota: Algunos campos solo pueden ser editados por el administrador.
-      </Note>
+      <Note variant="info">Nota: Algunos campos solo pueden ser editados por el administrador.</Note>
 
       <div>
         <label>
@@ -437,9 +368,7 @@ export default function Form() {
         <input type="text" />
       </div>
 
-      <Body type="body2">
-        Para continuar, complete todos los campos requeridos.
-      </Body>
+      <Body type="body2">Para continuar, complete todos los campos requeridos.</Body>
     </form>
   );
 }
@@ -452,9 +381,9 @@ export default function Form() {
 Para ver todos los estilos y ejemplos de uso, navega a la sección de **Tipografía** en el Design System:
 
 ```tsx
-import FontShowcase from '@/components/typography/FontShowcase';
+import FontShowcase from "@/components/typography/FontShowcase";
 
-<FontShowcase />
+<FontShowcase />;
 ```
 
 El componente `FontShowcase` muestra:

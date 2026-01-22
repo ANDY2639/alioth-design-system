@@ -1,34 +1,39 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    // Obtener el tema guardado o usar el preferido del sistema
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Initialize theme with lazy initial state to avoid hydration issues
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     const initialTheme = savedTheme || systemTheme;
-    
-    setTheme(initialTheme);
-    if (initialTheme === 'dark') {
-      document.documentElement.classList.add('dark');
+
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
     }
+
+    return initialTheme;
+  });
+
+  useLayoutEffect(() => {
+    setMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
@@ -45,9 +50,9 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all duration-300 group"
-      aria-label={`Cambiar a tema ${theme === 'light' ? 'oscuro' : 'claro'}`}
+      aria-label={`Cambiar a tema ${theme === "light" ? "oscuro" : "claro"}`}
     >
-      {theme === 'light' ? (
+      {theme === "light" ? (
         <>
           <svg
             className="w-5 h-5 text-warning-600 transition-transform group-hover:rotate-180 duration-300"

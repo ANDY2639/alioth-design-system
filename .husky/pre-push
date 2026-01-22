@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+echo '🚀 Running pre-push validations...'
+
+# Clean .next folder using rimraf (cross-platform)
+echo '🧹 Cleaning .next folder...'
+pnpm rimraf .next
+
+# Run TypeScript type checking
+echo '🔍 Checking TypeScript types...'
+pnpm check:types || {
+  echo '❌ Type check failed. Push aborted.'
+  exit 1
+}
+
+# Run ESLint
+echo '🧹 Running ESLint...'
+pnpm check:lint || {
+  echo '❌ Lint check failed. Push aborted.'
+  exit 1
+}
+
+# Check formatting
+echo '🎨 Checking code formatting...'
+pnpm check:format || {
+  echo '❌ Format check failed. Run "pnpm format" to fix. Push aborted.'
+  exit 1
+}
+
+echo '✅ All validations passed! Pushing...'

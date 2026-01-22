@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import { useState, Suspense } from 'react';
-import dynamic from 'next/dynamic';
-import Sidebar from '@/components/layout/Sidebar';
-import MainLayout from '@/components/layout/MainLayout';
+import { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
+import Sidebar from "@/components/layout/Sidebar";
+import MainLayout from "@/components/layout/MainLayout";
 
 // Dynamic imports with ssr: false to prevent hydration mismatches
-const ColorPalettePicker = dynamic(() => import('@/components/color-system/ColorPalettePicker'), {
+const ColorPalettePicker = dynamic(() => import("@/components/color-system/ColorPalettePicker"), {
   ssr: false,
   loading: () => <div className="h-12 bg-neutral-200 rounded animate-pulse" />,
 });
 
-const ColorCard = dynamic(() => import('@/components/color-system/ColorCard'), {
+const ColorCard = dynamic(() => import("@/components/color-system/ColorCard"), {
   ssr: false,
   loading: () => <div className="h-64 bg-neutral-200 rounded animate-pulse" />,
 });
 
-const FontShowcase = dynamic(() => import('@/components/typography/FontShowcase'), {
+const FontShowcase = dynamic(() => import("@/components/typography/FontShowcase"), {
   ssr: false,
   loading: () => <div className="h-96 bg-neutral-200 rounded animate-pulse" />,
 });
 
-const ComponentShowcase = dynamic(() => import('@/components/examples/ComponentShowcase'), {
+const ComponentShowcase = dynamic(() => import("@/components/examples/ComponentShowcase"), {
   ssr: false,
   loading: () => <div className="h-80 bg-neutral-200 rounded animate-pulse" />,
 });
 
 export default function DashboardContent() {
-  const [activeSection, setActiveSection] = useState('colors');
+  const [activeSection, setActiveSection] = useState("colors");
 
   const renderSection = () => {
     switch (activeSection) {
-      case 'colors':
+      case "colors":
         return (
           <div className="space-y-6">
             <Suspense fallback={<div className="h-12 bg-neutral-200 rounded animate-pulse" />}>
@@ -42,13 +42,13 @@ export default function DashboardContent() {
             </Suspense>
           </div>
         );
-      case 'typography':
+      case "typography":
         return (
           <Suspense fallback={<div className="h-96 bg-neutral-200 rounded animate-pulse" />}>
             <FontShowcase />
           </Suspense>
         );
-      case 'components':
+      case "components":
         return (
           <Suspense fallback={<div className="h-80 bg-neutral-200 rounded animate-pulse" />}>
             <ComponentShowcase />
@@ -65,9 +65,7 @@ export default function DashboardContent() {
       <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />
 
       {/* Main Layout */}
-      <MainLayout>
-        {renderSection()}
-      </MainLayout>
+      <MainLayout>{renderSection()}</MainLayout>
     </div>
   );
 }

@@ -25,6 +25,7 @@ The **Alioth Design System** is a fully functional, production-ready Next.js 16 
 ## 🏗️ Architecture Overview
 
 ### Tech Stack
+
 - **Framework**: Next.js 16.1.2 (Turbopack)
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 4
@@ -34,6 +35,7 @@ The **Alioth Design System** is a fully functional, production-ready Next.js 16 
 ### Key Design Patterns
 
 #### 1. **Context API for Global State**
+
 ```typescript
 // ColorContext.tsx - Centralized color theme management
 - Provider: ColorProvider wraps app in layout.tsx
@@ -44,6 +46,7 @@ The **Alioth Design System** is a fully functional, production-ready Next.js 16 
 ```
 
 #### 2. **Dynamic Imports with SSR Disabled**
+
 ```typescript
 // Prevents hydration mismatches by skipping server-side rendering
 // for components that use client-only hooks (useColorTheme)
@@ -54,6 +57,7 @@ const ColorCard = dynamic(() => import('@/components/color-system/ColorCard'), {
 ```
 
 #### 3. **Suspense Boundaries**
+
 ```typescript
 // Graceful fallback rendering during component hydration
 <Suspense fallback={<LoadingPlaceholder />}>
@@ -113,7 +117,9 @@ alioth-design-system/
 ## 🎨 Color Palettes
 
 ### Palette Structure
+
 Each palette has:
+
 - **11 tones**: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950
 - **Base color**: Shade 500 (mid-tone for UI)
 - **Light variant**: Shade 50 (backgrounds, disabled states)
@@ -121,23 +127,24 @@ Each palette has:
 
 ### Available Palettes
 
-| Palette | Light BG | Base | Dark | Usage |
-|---------|----------|------|------|-------|
-| **Primary** (🔵) | #F2F7FC | #006ABE | #1F2A44 | Main CTAs, headers |
-| **Secondary** (🟣) | #ECEFFF | #7B3FF2 | #211650 | Accents, highlights |
-| **Success** (✅) | #F0FDF4 | #16A34A | #052E16 | Success states, confirmations |
-| **Warning** (⚠️) | #FFFBEB | #CA8A04 | #451A03 | Warnings, alerts |
-| **Error** (❌) | #FEF2F2 | #DC2626 | #450A0A | Errors, destructive actions |
-| **Info** (ℹ️) | #ECFEFF | #0891B2 | #083344 | Information, tips |
-| **Neutral** (⚪) | #F7F9FA | #6B7280 | #1E1E1E | Text, borders, subtle elements |
+| Palette            | Light BG | Base    | Dark    | Usage                          |
+| ------------------ | -------- | ------- | ------- | ------------------------------ |
+| **Primary** (🔵)   | #F2F7FC  | #006ABE | #1F2A44 | Main CTAs, headers             |
+| **Secondary** (🟣) | #ECEFFF  | #7B3FF2 | #211650 | Accents, highlights            |
+| **Success** (✅)   | #F0FDF4  | #16A34A | #052E16 | Success states, confirmations  |
+| **Warning** (⚠️)   | #FFFBEB  | #CA8A04 | #451A03 | Warnings, alerts               |
+| **Error** (❌)     | #FEF2F2  | #DC2626 | #450A0A | Errors, destructive actions    |
+| **Info** (ℹ️)      | #ECFEFF  | #0891B2 | #083344 | Information, tips              |
+| **Neutral** (⚪)   | #F7F9FA  | #6B7280 | #1E1E1E | Text, borders, subtle elements |
 
 ### CSS Variables Implementation
+
 ```css
 /* Primary (default) */
---color-50: #F2F7FC;
---color-100: #E5EEF8;
+--color-50: #f2f7fc;
+--color-100: #e5eef8;
 /* ... 9 more shades ... */
---color-950: #1F2A44;
+--color-950: #1f2a44;
 
 /* Applied to all 7 palettes in globals.css */
 ```
@@ -147,6 +154,7 @@ Each palette has:
 ## 🔄 Component System
 
 ### Client Components (with useColorTheme)
+
 These components react to theme changes in real-time:
 
 1. **ColorCard.tsx** (88 lines)
@@ -187,6 +195,7 @@ These components react to theme changes in real-time:
    - Shows real-world color application
 
 ### Layout Components (Static)
+
 1. **Navbar.tsx** - Header with branding and theme toggle
 2. **Sidebar.tsx** - Navigation with section selection
 3. **MainLayout.tsx** - Scroll container for main content
@@ -197,26 +206,30 @@ These components react to theme changes in real-time:
 ## 🚀 Key Features Implemented
 
 ### 1. Dynamic Theme Switching
+
 ```typescript
 const { theme, setTheme } = useColorTheme();
-setTheme('secondary'); // All components update instantly
+setTheme("secondary"); // All components update instantly
 ```
 
 **How it works**:
+
 - Changes CSS variable values in root element
 - All components using `var(--color-XXX)` update automatically
 - No page reload needed
 - Instant visual feedback
 
 ### 2. Theme Persistence
+
 ```typescript
 // Automatically saved to localStorage
-localStorage.setItem('alioth-color-theme', 'primary');
+localStorage.setItem("alioth-color-theme", "primary");
 // Restored on next session
-const saved = localStorage.getItem('alioth-color-theme');
+const saved = localStorage.getItem("alioth-color-theme");
 ```
 
 ### 3. SSR-Safe Component Loading
+
 ```typescript
 // Prevents hydration mismatch errors
 const ColorCard = dynamic(() => import('@/components/color-system/ColorCard'), {
@@ -226,6 +239,7 @@ const ColorCard = dynamic(() => import('@/components/color-system/ColorCard'), {
 ```
 
 ### 4. Copy-to-Clipboard
+
 ```typescript
 const copyHex = async (hex: string) => {
   await navigator.clipboard.writeText(hex);
@@ -235,6 +249,7 @@ const copyHex = async (hex: string) => {
 ```
 
 ### 5. Responsive Dashboard
+
 - Sidebar: Fixed left navigation
 - Main area: Scrollable content with padding
 - Grid layouts for color swatches
@@ -245,6 +260,7 @@ const copyHex = async (hex: string) => {
 ## 📊 Component Usage Examples
 
 ### Using ColorContext Hook
+
 ```typescript
 'use client'; // Required for hooks
 
@@ -252,7 +268,7 @@ import { useColorTheme } from '@/context/ColorContext';
 
 export function MyComponent() {
   const { theme, setTheme, currentPalette } = useColorTheme();
-  
+
   return (
     <div
       style={{
@@ -270,9 +286,11 @@ export function MyComponent() {
 ```
 
 ### Adding a New Palette
+
 To add a new color palette (e.g., Teal):
 
 1. **Add to colorPalettes.ts**:
+
 ```typescript
 {
   id: 'teal',
@@ -287,15 +305,17 @@ To add a new color palette (e.g., Teal):
 ```
 
 2. **Update ColorTheme type**:
+
 ```typescript
 type ColorTheme = 'primary' | 'secondary' | 'teal' | /* ... */;
 ```
 
 3. **Add CSS variables to globals.css**:
+
 ```css
 html.theme-teal {
-  --color-50: #F0FDFA;
-  --color-100: #CCFBF1;
+  --color-50: #f0fdfa;
+  --color-100: #ccfbf1;
   /* ... */
 }
 ```
@@ -305,6 +325,7 @@ html.theme-teal {
 ## 🔧 Build & Deployment
 
 ### Local Development
+
 ```bash
 npm install
 npm run dev
@@ -312,6 +333,7 @@ npm run dev
 ```
 
 ### Production Build
+
 ```bash
 npm run build    # Creates optimized .next/ folder
 npm run start    # Serves production build on http://localhost:3000
@@ -319,6 +341,7 @@ npm run lint     # Checks code quality
 ```
 
 ### Build Output
+
 ```
 ✓ Compiled successfully in 3.0s
 ✓ TypeScript compiled without errors
@@ -331,18 +354,21 @@ npm run lint     # Checks code quality
 ## ✅ Quality Assurance
 
 ### Build Status
+
 - ✅ Next.js 16.1.2 Turbopack compilation: **SUCCESS**
 - ✅ TypeScript type checking: **NO ERRORS**
 - ✅ Static page generation: **4 pages prerendered**
 - ✅ CSS variables: **Properly scoped and functional**
 
 ### SSR/Hydration
+
 - ✅ No hydration mismatches
 - ✅ Dynamic imports prevent server-rendering issues
 - ✅ Suspense boundaries provide fallbacks
 - ✅ Client-side hooks properly isolated
 
 ### Performance
+
 - ✅ No console errors or warnings
 - ✅ Efficient CSS variable usage
 - ✅ Minimal JavaScript bundle (dynamic imports)
@@ -368,6 +394,7 @@ Run these tests to verify functionality:
 ## 📈 Future Enhancement Opportunities
 
 ### Phase 2: Advanced Features
+
 1. **Export Capabilities**
    - Export as CSS variables file
    - Export as Tailwind config
@@ -399,18 +426,22 @@ Run these tests to verify functionality:
 ## 📚 Dependencies
 
 ### Core
+
 - `next@16.1.2` - React framework with Turbopack
 - `react@19` - UI library
 - `typescript@5` - Type safety
 
 ### Styling
+
 - `tailwindcss@4` - Utility-first CSS
 - `postcss@8` - CSS processing
 
 ### Fonts
+
 - `next/font` - Poppins font optimization
 
 ### Development
+
 - `eslint@^9` - Code linting
 - `@types/react` - TypeScript React definitions
 - `@types/node` - TypeScript Node definitions
@@ -420,6 +451,7 @@ Run these tests to verify functionality:
 ## 🎓 Learning Resources
 
 ### Key Concepts Implemented
+
 1. **Next.js Context API**: Global state management
 2. **Dynamic Imports**: Conditional code splitting
 3. **Suspense Boundaries**: Async component loading
@@ -428,6 +460,7 @@ Run these tests to verify functionality:
 6. **Tailwind CSS**: Rapid UI development
 
 ### Files to Study
+
 1. **ColorContext.tsx** - Pattern for global state
 2. **DashboardContent.tsx** - Dynamic imports & Suspense pattern
 3. **globals.css** - CSS variable organization
@@ -456,6 +489,7 @@ Run these tests to verify functionality:
 ## 📝 Final Notes
 
 This Design System is:
+
 - **Production-Ready**: Compiled and tested successfully
 - **Type-Safe**: Full TypeScript implementation with zero errors
 - **Maintainable**: Clear component architecture and documentation
@@ -463,6 +497,7 @@ This Design System is:
 - **Performant**: Optimized with Turbopack and dynamic imports
 
 **Next Steps**:
+
 1. Run `npm run dev` to start development
 2. Open http://localhost:3000 in browser
 3. Test theme switching and component reactivity

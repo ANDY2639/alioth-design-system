@@ -108,16 +108,17 @@ globals.css
      ...
      --color-950: #211650;
    }
-   
+
    html.theme-success {
      --color-50: #F0FDF4;
      ...
    }
-   
+
    /* All 7 palettes... */
 ```
 
 ### CSS Variable Reference
+
 ```
 --color-50   → Lightest (backgrounds, disabled states)
 --color-100  → Light (hover backgrounds)
@@ -216,3 +217,4 @@ layout.tsx (Root)
 
 ```
 1. User Acti
+```

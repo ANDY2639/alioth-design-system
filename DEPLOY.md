@@ -17,6 +17,7 @@
 Para que los workflows funcionen, debes agregar estos secretos en tu repositorio:
 
 ### Pasos:
+
 1. Ve a tu repositorio en GitHub
 2. Click en **Settings** → **Secrets and variables** → **Actions**
 3. Click en **New repository secret**
@@ -35,27 +36,33 @@ Valor: nfp_fZdFVdFehqsKhUT2na6Pt9TcaZoYRHbq1ef1
 ## 📦 Workflows Configurados
 
 ### 1. 🔍 PR Preview Deploy
+
 **Archivo:** `.github/workflows/pr-preview.yml`
 
 **Se ejecuta cuando:**
+
 - Abres un Pull Request a `master`
 - Actualizas un PR existente
 - Reabres un PR
 
 **Qué hace:**
+
 - ✅ Instala dependencias con pnpm
 - ✅ Ejecuta el build de Next.js (exporta a directorio `out`)
 - ✅ Despliega a Netlify (deploy preview)
 - ✅ Comenta en el PR con la URL del preview
 
 ### 2. 🚀 Production Deploy
+
 **Archivo:** `.github/workflows/production-deploy.yml`
 
 **Se ejecuta cuando:**
+
 - Haces push directo a `master`
 - Un PR es merged a `master`
 
 **Qué hace:**
+
 - ✅ Instala dependencias con pnpm
 - ✅ Ejecuta el build de Next.js (exporta a directorio `out`)
 - ✅ Despliega a producción en Netlify
@@ -147,6 +154,7 @@ npx http-server out
 ## 📝 Configuración de Netlify
 
 ### netlify.toml
+
 ```toml
 [build]
   command = "pnpm install && pnpm build"
@@ -165,11 +173,12 @@ npx http-server out
 ```
 
 ### next.config.ts
+
 ```typescript
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",  // ✅ Exporta a directorio estático "out"
+  output: "export", // ✅ Exporta a directorio estático "out"
 };
 
 export default nextConfig;
@@ -190,22 +199,26 @@ export default nextConfig;
 ## ❓ Troubleshooting
 
 ### Build falla en Netlify
+
 1. Verifica que los secretos estén configurados correctamente
 2. Revisa los logs en el workflow de GitHub Actions
 3. Verifica que `pnpm-lock.yaml` esté committeado
 4. Asegúrate de que `next.config.ts` tenga `output: "export"`
 
 ### "No files or functions to deploy"
+
 - Verifica que el directorio `out/` se está generando correctamente
 - Asegúrate de que `netlify.toml` tiene `publish = "out"`
 - Comprueba que no hay errores en el build local: `pnpm build`
 
 ### Preview deploy no funciona
+
 1. Verifica que `NETLIFY_SITE_ID` y `NETLIFY_AUTH_TOKEN` estén configurados
 2. Revisa permisos del token en Netlify
 3. Verifica que el PR esté contra la rama `master`
 
 ### Deploy a producción no se ejecuta
+
 1. Verifica que el push sea a la rama `master`
 2. Revisa el tab "Actions" en GitHub para ver errores
 3. Verifica que no haya errores en el build

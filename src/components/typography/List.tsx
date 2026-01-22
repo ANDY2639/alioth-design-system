@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 /**
  * List Component - Sistema tipográfico Alioth
@@ -16,7 +16,7 @@ import { ReactNode } from 'react';
 
 export interface ListProps {
   /** Tipo de lista */
-  type: 'ordered' | 'unordered';
+  type: "ordered" | "unordered";
   /** Items de la lista */
   items: ReactNode[];
   /** Clases adicionales */
@@ -25,31 +25,15 @@ export interface ListProps {
   itemClassName?: string;
 }
 
-export const List = ({
-  type,
-  items,
-  className = '',
-  itemClassName = ''
-}: ListProps) => {
-  const Tag = type === 'ordered' ? 'ol' : 'ul';
-  const listTypeClass = type === 'ordered' ? 'list-decimal' : 'list-disc';
+export const List = ({ type, items, className = "", itemClassName = "" }: ListProps) => {
+  const Tag = type === "ordered" ? "ol" : "ul";
+  const listTypeClass = type === "ordered" ? "list-decimal" : "list-disc";
 
-  const classes = [
-    listTypeClass,
-    'list-inside',
-    'space-y-2',
-    'text-neutral-900 dark:text-neutral-100',
-    'text-sm',
-    className,
-  ]
+  const classes = [listTypeClass, "list-inside", "space-y-2", "text-neutral-900 dark:text-neutral-100", "text-sm", className]
     .filter(Boolean)
-    .join(' ');
+    .join(" ");
 
-  const itemClasses = [
-    itemClassName,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const itemClasses = [itemClassName].filter(Boolean).join(" ");
 
   return (
     <Tag className={classes}>

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useColorTheme } from '@/context/ColorContext';
-import { AVAILABLE_THEMES, COLOR_PALETTES, ColorTheme } from '@/lib/colorPalettes';
-import { useEffect, useRef, useState } from 'react';
+import { useColorTheme } from "@/context/ColorContext";
+import { AVAILABLE_THEMES, COLOR_PALETTES, ColorTheme } from "@/lib/colorPalettes";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function ColorSelector() {
   const { colorTheme, setColorTheme } = useColorTheme();
@@ -10,13 +10,17 @@ export default function ColorSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Initialize mounted state immediately to avoid hydration mismatch
+  useLayoutEffect(() => {
+    setMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
+  }, []);
+
   useEffect(() => {
     // Cargar tema del localStorage al montar
-    const savedTheme = localStorage.getItem('alioth-color-theme') as ColorTheme | null;
+    const savedTheme = localStorage.getItem("alioth-color-theme") as ColorTheme | null;
     if (savedTheme) {
       setColorTheme(savedTheme);
     }
-    setMounted(true);
   }, [setColorTheme]);
 
   useEffect(() => {
@@ -28,26 +32,24 @@ export default function ColorSelector() {
     }
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [isOpen]);
 
   const setColorThemeState = (theme: ColorTheme) => {
     setColorTheme(theme);
-    localStorage.setItem('alioth-color-theme', theme);
-    window.dispatchEvent(new CustomEvent('color-theme-change', { detail: theme }));
+    localStorage.setItem("alioth-color-theme", theme);
+    window.dispatchEvent(new CustomEvent("color-theme-change", { detail: theme }));
     setIsOpen(false);
   };
 
-  const currentTheme = AVAILABLE_THEMES.find((t) => t.id === colorTheme);
+  const currentTheme = AVAILABLE_THEMES.find(t => t.id === colorTheme);
   const currentPalette = COLOR_PALETTES[colorTheme];
 
   // Evitar hidratación mismatch
   if (!mounted) {
-    return (
-      <div className="w-48 h-10 rounded-lg bg-neutral-100 dark:bg-neutral-800" />
-    );
+    return <div className="w-48 h-10 rounded-lg bg-neutral-100 dark:bg-neutral-800" />;
   }
 
   return (
@@ -62,7 +64,7 @@ export default function ColorSelector() {
           text-neutral-700 dark:text-neutral-300 text-sm font-medium"
         style={{
           backgroundColor: isOpen ? currentPalette.baseColor : undefined,
-          color: isOpen ? '#fff' : undefined,
+          color: isOpen ? "#fff" : undefined,
           borderColor: isOpen ? currentPalette.baseColor : undefined,
         }}
         aria-haspopup="listbox"
@@ -73,7 +75,7 @@ export default function ColorSelector() {
           <span>{currentTheme?.name}</span>
         </span>
         <svg
-          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -90,7 +92,7 @@ export default function ColorSelector() {
             overflow-hidden animate-in fade-in-50 zoom-in-95 duration-200"
           role="listbox"
         >
-          {AVAILABLE_THEMES.map((theme) => {
+          {AVAILABLE_THEMES.map(theme => {
             const palette = COLOR_PALETTES[theme.id];
             const isSelected = colorTheme === theme.id;
 
@@ -100,11 +102,7 @@ export default function ColorSelector() {
                 onClick={() => setColorThemeState(theme.id)}
                 className={`w-full px-4 py-3 flex items-center gap-2 text-left
                   transition-all duration-150
-                  ${
-                    isSelected
-                      ? 'text-white'
-                      : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700'
-                  }
+                  ${isSelected ? "text-white" : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700"}
                 `}
                 style={{
                   backgroundColor: isSelected ? palette.baseColor : undefined,
@@ -116,7 +114,11 @@ export default function ColorSelector() {
                 <span className="font-medium">{theme.name}</span>
                 {isSelected && (
                   <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 )}
               </button>

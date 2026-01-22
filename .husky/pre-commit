@@ -1,0 +1,57 @@
+#!/usr/bin/env sh
+
+echo '🎨 Running Prettier and ESLint on staged files...'
+
+# Get staged files
+PRETTIER_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(js|ts|jsx|tsx|json|css|md|yml)$' | sed 's| |\\ |g')
+ESLINT_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(js|ts|jsx|tsx)$' | sed 's| |\\ |g')
+TS_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' | sed 's| |\\ |g')
+
+# Error flag
+HAS_ERROR=0
+
+# Apply Prettier
+if [ -n "$PRETTIER_FILES" ]; then
+  echo '🖌  Formatting with Prettier...'
+  echo $PRETTIER_FILES | xargs pnpm prettier --write --list-different --ignore-unknown || {
+    echo "❌ Error: Prettier found problems that it couldn't correct."
+    HAS_ERROR=1
+  }
+fi
+
+# Apply ESLint
+if [ -n "$ESLINT_FILES" ]; then
+  echo '🧹 Running ESLint...'
+  echo $ESLINT_FILES | xargs pnpm eslint --fix || {
+    echo '❌ Error: ESLint found errors that it could not automatically correct.'
+    HAS_ERROR=1
+  }
+fi
+
+# Clean .next folder using rimraf (cross-platform)
+echo '🧹 Cleaning .next folder...'
+pnpm rimraf .next
+
+# Run TypeScript type checking (only if there are TS files staged)
+if [ -n "$TS_FILES" ]; then
+  echo '🔍 Checking TypeScript types...'
+  pnpm check:types || {
+    echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡
+          Are you seriously trying to commit that? Make the changes required above.'
+    HAS_ERROR=1
+  }
+fi
+
+# Cancel commit if any errors were found
+if [ $HAS_ERROR -ne 0 ]; then
+  echo '⛔ Commit aborted due to lint, format or type errors.'
+  exit 1
+fi
+
+# Re-index modified files
+if [ -n "$PRETTIER_FILES" ] || [ -n "$ESLINT_FILES" ]; then
+  echo '📝 Re-adding modified files to staging...'
+  echo "$PRETTIER_FILES" "$ESLINT_FILES" | xargs git add 2>/dev/null
+fi
+
+echo '✅ Files formatted, fixed, and ready for commit!'

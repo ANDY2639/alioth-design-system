@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useColorTheme } from '@/context/ColorContext';
-import { COLOR_PALETTES, ColorTheme } from '@/lib/colorPalettes';
+import { useColorTheme } from "@/context/ColorContext";
+import { COLOR_PALETTES, ColorTheme } from "@/lib/colorPalettes";
 
 export default function DemoButton() {
   const { colorTheme } = useColorTheme();
@@ -19,10 +19,10 @@ export default function DemoButton() {
         backgroundColor: baseColor,
         borderColor: baseColor,
       }}
-      onMouseEnter={(e) => {
+      onMouseEnter={e => {
         (e.currentTarget as HTMLButtonElement).style.backgroundColor = hoverColor;
       }}
-      onMouseLeave={(e) => {
+      onMouseLeave={e => {
         (e.currentTarget as HTMLButtonElement).style.backgroundColor = baseColor;
       }}
     >

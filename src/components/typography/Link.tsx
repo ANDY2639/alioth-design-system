@@ -1,4 +1,4 @@
-import { ReactNode, AnchorHTMLAttributes } from 'react';
+import { ReactNode, AnchorHTMLAttributes } from "react";
 
 /**
  * Link Component - Sistema tipográfico Alioth
@@ -26,32 +26,13 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
 }
 
-export const Link = ({
-  children,
-  href,
-  external = false,
-  className = '',
-  ...props
-}: LinkProps) => {
-  const classes = [
-    'text-primary-500',
-    'dark:text-primary-400',
-    'hover:underline',
-    'transition-all',
-    'duration-200',
-    className,
-  ]
+export const Link = ({ children, href, external = false, className = "", ...props }: LinkProps) => {
+  const classes = ["text-primary-500", "dark:text-primary-400", "hover:underline", "transition-all", "duration-200", className]
     .filter(Boolean)
-    .join(' ');
+    .join(" ");
 
   return (
-    <a
-      href={href}
-      className={classes}
-      target={external ? '_blank' : undefined}
-      rel={external ? 'noopener noreferrer' : undefined}
-      {...props}
-    >
+    <a href={href} className={classes} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} {...props}>
       {children}
     </a>
   );
