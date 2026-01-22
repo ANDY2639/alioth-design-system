@@ -3,6 +3,7 @@
 import DemoButton from './DemoButton';
 import DemoBadge from './DemoBadge';
 import DemoCard from './DemoCard';
+import { Button } from '@heroui/react';
 
 export default function ComponentShowcase() {
   return (
@@ -23,6 +24,7 @@ export default function ComponentShowcase() {
           Botón
         </h3>
         <DemoButton />
+        <Button size="lg" color="primary">Botón</Button>
       </div>
 
       {/* Badge */}

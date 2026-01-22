@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ColorProvider } from "@/context/ColorContext";
+import Providers from "@/providers/Providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,9 +25,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased font-sans h-full`}
       >
-        <ColorProvider>
+        <Providers>
           {children}
-        </ColorProvider>
+        </Providers>
       </body>
     </html>
   );
