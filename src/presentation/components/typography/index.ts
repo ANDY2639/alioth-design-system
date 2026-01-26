@@ -1,28 +1,17 @@
-/**
- * Tipografía - Alioth Design System
- *
- * Exportaciones centralizadas de todos los componentes tipográficos.
- *
- * @example
- * import { Heading, Body, Caption, Link, List, Note } from '@/components/typography';
- */
+export { default as Heading } from "./Heading";
+export * from "./Heading";
 
-export { Heading } from "./Heading";
-export type { HeadingProps } from "./Heading";
+export { default as Body } from "./Body";
+export * from "./Body";
 
-export { Body } from "./Body";
-export type { BodyProps } from "./Body";
+export { default as Caption } from "./Caption";
+export * from "./Caption";
 
-export { Caption } from "./Caption";
-export type { CaptionProps } from "./Caption";
+export { default as Link } from "./Link";
+export * from "./Link";
 
-export { Link } from "./Link";
-export type { LinkProps } from "./Link";
+export { default as List } from "./List";
+export * from "./List";
 
-export { List } from "./List";
-export type { ListProps } from "./List";
-
-export { Note } from "./Note";
-export type { NoteProps } from "./Note";
-
-export { default as FontShowcase } from "./FontShowcase";
+export { default as Note } from "./Note";
+export * from "./Note";

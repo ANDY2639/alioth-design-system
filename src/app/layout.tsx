@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Providers from "@/presentation/providers/Providers";
+import RootMainLayout from "@/presentation/components/Layouts/RootMainLayout";
+import Providers from "@/presentation/components/Providers/Providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,15 +16,13 @@ export const metadata: Metadata = {
   description: "Sistema de diseño Alioth con Next.js 16, TypeScript y Tailwind CSS v4",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.variable} antialiased font-sans h-full`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <RootMainLayout>{children}</RootMainLayout>
+        </Providers>
       </body>
     </html>
   );
