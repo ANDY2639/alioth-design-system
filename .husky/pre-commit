@@ -12,7 +12,7 @@ HAS_ERROR=0
 
 # Apply Prettier
 if [ -n "$PRETTIER_FILES" ]; then
-  echo '🖌  Formatting with Prettier...'
+  echo '🧹 Formatting with Prettier...'
   echo $PRETTIER_FILES | xargs pnpm prettier --write --list-different --ignore-unknown || {
     echo "❌ Error: Prettier found problems that it couldn't correct."
     HAS_ERROR=1
