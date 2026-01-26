@@ -2,26 +2,26 @@
 
 import { useState, Suspense } from "react";
 import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
-import Sidebar from "@/components/layout/Sidebar";
+import MainLayout from "@/presentation/components/layout/MainLayout";
+import Sidebar from "@/presentation/components/layout/Sidebar";
 
 // Dynamic imports with ssr: false to prevent hydration mismatches
-const ColorPalettePicker = dynamic(() => import("@/components/color-system/ColorPalettePicker"), {
+const ColorPalettePicker = dynamic(() => import("@/presentation/components/color-system/ColorPalettePicker"), {
   ssr: false,
   loading: () => <div className="h-12 bg-neutral-200 rounded animate-pulse" />,
 });
 
-const ColorCard = dynamic(() => import("@/components/color-system/ColorCard"), {
+const ColorCard = dynamic(() => import("@/presentation/components/color-system/ColorCard"), {
   ssr: false,
   loading: () => <div className="h-64 bg-neutral-200 rounded animate-pulse" />,
 });
 
-const FontShowcase = dynamic(() => import("@/components/typography/FontShowcase"), {
+const FontShowcase = dynamic(() => import("@/presentation/components/typography/FontShowcase"), {
   ssr: false,
   loading: () => <div className="h-96 bg-neutral-200 rounded animate-pulse" />,
 });
 
-const ComponentShowcase = dynamic(() => import("@/components/examples/ComponentShowcase"), {
+const ComponentShowcase = dynamic(() => import("@/presentation/components/examples/ComponentShowcase"), {
   ssr: false,
   loading: () => <div className="h-80 bg-neutral-200 rounded animate-pulse" />,
 });

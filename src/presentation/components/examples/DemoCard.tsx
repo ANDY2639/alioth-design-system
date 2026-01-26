@@ -1,7 +1,7 @@
 "use client";
 
-import { useColorTheme } from "@/context/ColorContext";
-import { COLOR_PALETTES, ColorTheme } from "@/lib/colorPalettes";
+import { useColorTheme } from "@/presentation/context/ColorContext";
+import { COLOR_PALETTES, ColorTheme } from "@/presentation/lib/colorPalettes";
 
 export default function DemoCard() {
   const { colorTheme } = useColorTheme();

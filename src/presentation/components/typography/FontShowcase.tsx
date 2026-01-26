@@ -1,6 +1,6 @@
 "use client";
 
-import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from "@/lib/typography";
+import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from "@/presentation/lib/typography";
 import Heading from "./Heading";
 
 /**

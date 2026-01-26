@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@plugin "./hero.ts";
+
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* ===========================
+     Custom HeroUI Theme
+     =========================== */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+
+  /* ===========================
+     COLORS
+     =========================== */
+
+  /* Color Primary */
+  --color-primary-50: #f2f7fc;
+  --color-primary-100: #e1edf8;
+  --color-primary-200: #cadff3;
+  --color-primary-300: #a5cbeb;
+  --color-primary-400: #7bafdf;
+  --color-primary-500: #5b92d6;
+  --color-primary-600: #4779c9;
+  --color-primary-700: #3d65b8;
+  --color-primary-800: #375396;
+  --color-primary-900: #314877;
+  --color-primary-950: #1f2a44;
+
+  /* Color Secondary */
+  --color-secondary-50: #ecefff;
+  --color-secondary-100: #dde1ff;
+  --color-secondary-200: #c2c8ff;
+  --color-secondary-300: #9ca2ff;
+  --color-secondary-400: #7875ff;
+  --color-secondary-500: #6b5bff;
+  --color-secondary-600: #5836f5;
+  --color-secondary-700: #4c2ad8;
+  --color-secondary-800: #3d25ae;
+  --color-secondary-900: #352689;
+  --color-secondary-950: #211650;
+
+  /* Color Success */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-success-950: #052e16;
+
+  /* Color Warning */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
+
+  /* Color Error */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+  --color-error-950: #450a0a;
+
+  /* Color Info */
+  --color-info-50: #ecfeff;
+  --color-info-100: #cffafe;
+  --color-info-200: #a5f3fc;
+  --color-info-300: #67e8f9;
+  --color-info-400: #22d3ee;
+  --color-info-500: #06b6d4;
+  --color-info-600: #0891b2;
+  --color-info-700: #0e7490;
+  --color-info-800: #155e75;
+  --color-info-900: #164e63;
+  --color-info-950: #083344;
+
+  /* Color Neutral */
+  --color-neutral-50: #f7f9fa;
+  --color-neutral-100: #edf0f2;
+  --color-neutral-200: #dde1e4;
+  --color-neutral-300: #c2c7cb;
+  --color-neutral-400: #a5abb1;
+  --color-neutral-500: #7f858c;
+  --color-neutral-600: #5e636a;
+  --color-neutral-700: #44484e;
+  --color-neutral-800: #2e3237;
+  --color-neutral-900: #222529;
+  --color-neutral-950: #1e1e1e;
+
+  /* ===========================
+     SPACING SCALE
+     =========================== */
+
+  --spacing-0: 0;
+  --spacing-px: 1px;
+  --spacing-0\.5: 2px; /* 0.125rem */
+  --spacing-1\.5: 6px; /* 0.375rem */
+  --spacing-2\.5: 10px; /* 0.625rem */
+  --spacing-3\.5: 14px; /* 0.875rem */
+
+  /* ===========================
+     BORDER RADIUS
+     =========================== */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* ===========================
+     BOX SHADOW
+     =========================== */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* ===========================
+     FONT SIZES EXTENDIDOS
+     =========================== */
+
+  --text-heading1: 40px;
+  --text-heading1--line-height: 1.2;
+  --text-heading2: 32px;
+  --text-heading2--line-height: 1.2;
+  --text-heading3: 28px;
+  --text-heading3--line-height: 1.3;
+  --text-heading4: 24px;
+  --text-heading4--line-height: 1.3;
+  --text-heading5: 20px;
+  --text-heading5--line-height: 1.4;
+  --text-heading6: 16px;
+  --text-heading6--line-height: 1.4;
+  --text-body1: 14px;
+  --text-body1--line-height: 1.5;
+  --text-body2: 14px;
+  --text-body2--line-height: 1.5;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

@@ -1,7 +1,7 @@
 "use client";
 
-import { useColorTheme } from "@/context/ColorContext";
-import { AVAILABLE_THEMES } from "@/lib/colorPalettes";
+import { useColorTheme } from "@/presentation/context/ColorContext";
+import { AVAILABLE_THEMES } from "@/presentation/lib/colorPalettes";
 
 export default function ColorPalettePicker() {
   const { colorTheme, setColorTheme } = useColorTheme();

@@ -1,7 +1,7 @@
 "use client";
 
-import DashboardContent from "@/components/DashboardContent";
-import Navbar from "@/components/layout/Navbar";
+import DashboardContent from "@/presentation/components/DashboardContent";
+import Navbar from "@/presentation/components/layout/Navbar";
 
 export default function Home() {
   return (

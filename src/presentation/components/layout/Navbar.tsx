@@ -1,7 +1,7 @@
 "use client";
 
-import ColorSelector from "@/components/ColorSelector";
-import ThemeToggle from "@/components/ThemeToggle";
+import ColorSelector from "@/presentation/components/ColorSelector";
+import ThemeToggle from "@/presentation/components/ThemeToggle";
 
 export default function Navbar() {
   return (

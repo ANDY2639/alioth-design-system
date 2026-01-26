@@ -1,12 +1,108 @@
 @import "tailwindcss";
 @plugin "./hero.ts";
 
-@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ===========================
+     HEROUI Color Variables (Converted from HEX)
+     =========================== */
+
+  /* Primary */
+  --heroui-primary-50: 210 63% 97%;
+  --heroui-primary-100: 209 62% 93%;
+  --heroui-primary-200: 209 63% 87%;
+  --heroui-primary-300: 207 64% 78%;
+  --heroui-primary-400: 209 61% 68%;
+  --heroui-primary-500: 213 60% 60%;
+  --heroui-primary-600: 217 55% 53%;
+  --heroui-primary-700: 220 50% 48%;
+  --heroui-primary-800: 222 46% 40%;
+  --heroui-primary-900: 220 42% 33%;
+  --heroui-primary-950: 222 37% 19%;
+
+  /* Secondary */
+  --heroui-secondary-50: 231 100% 96%;
+  --heroui-secondary-100: 233 100% 93%;
+  --heroui-secondary-200: 234 100% 88%;
+  --heroui-secondary-300: 236 100% 81%;
+  --heroui-secondary-400: 241 100% 73%;
+  --heroui-secondary-500: 246 100% 68%;
+  --heroui-secondary-600: 251 91% 59%;
+  --heroui-secondary-700: 252 69% 51%;
+  --heroui-secondary-800: 251 65% 41%;
+  --heroui-secondary-900: 249 57% 34%;
+  --heroui-secondary-950: 251 57% 20%;
+
+  /* Success */
+  --heroui-success-50: 138 76% 97%;
+  --heroui-success-100: 141 84% 93%;
+  --heroui-success-200: 141 79% 85%;
+  --heroui-success-300: 142 77% 73%;
+  --heroui-success-400: 142 69% 58%;
+  --heroui-success-500: 142 71% 45%;
+  --heroui-success-600: 142 76% 36%;
+  --heroui-success-700: 142 72% 29%;
+  --heroui-success-800: 143 64% 24%;
+  --heroui-success-900: 144 61% 20%;
+  --heroui-success-950: 145 80% 10%;
+
+  /* Warning */
+  --heroui-warning-50: 48 100% 96%;
+  --heroui-warning-100: 48 96% 89%;
+  --heroui-warning-200: 48 97% 77%;
+  --heroui-warning-300: 46 97% 65%;
+  --heroui-warning-400: 43 96% 56%;
+  --heroui-warning-500: 38 92% 50%;
+  --heroui-warning-600: 32 95% 44%;
+  --heroui-warning-700: 26 90% 37%;
+  --heroui-warning-800: 23 83% 31%;
+  --heroui-warning-900: 22 78% 26%;
+  --heroui-warning-950: 21 92% 14%;
+
+  /* Danger */
+  --heroui-danger: 0 84% 60%;
+  --heroui-danger-50: 0 86% 97%;
+  --heroui-danger-100: 0 93% 94%;
+  --heroui-danger-200: 0 96% 89%;
+  --heroui-danger-300: 0 94% 82%;
+  --heroui-danger-400: 0 91% 71%;
+  --heroui-danger-500: 0 84% 60%;
+  --heroui-danger-600: 0 72% 51%;
+  --heroui-danger-700: 0 74% 42%;
+  --heroui-danger-800: 0 70% 35%;
+  --heroui-danger-900: 0 63% 31%;
+  --heroui-danger-950: 0 75% 15%;
+
+  /* Info */
+  --heroui-info-50: 183 100% 96%;
+  --heroui-info-100: 185 96% 90%;
+  --heroui-info-200: 186 94% 82%;
+  --heroui-info-300: 187 92% 69%;
+  --heroui-info-400: 188 86% 53%;
+  --heroui-info-500: 189 94% 43%;
+  --heroui-info-600: 192 91% 36%;
+  --heroui-info-700: 193 82% 31%;
+  --heroui-info-800: 194 70% 27%;
+  --heroui-info-900: 196 64% 24%;
+  --heroui-info-950: 197 79% 15%;
+
+  /* Neutral */
+  --heroui-neutral-50: 200 23% 97%;
+  --heroui-neutral-100: 204 16% 94%;
+  --heroui-neutral-200: 206 11% 88%;
+  --heroui-neutral-300: 207 8% 78%;
+  --heroui-neutral-400: 210 7% 67%;
+  --heroui-neutral-500: 212 5% 52%;
+  --heroui-neutral-600: 215 6% 39%;
+  --heroui-neutral-700: 216 7% 29%;
+  --heroui-neutral-800: 213 9% 20%;
+  --heroui-neutral-900: 214 9% 15%;
+  --heroui-neutral-950: 0 0% 12%;
 }
 
 @theme inline {
@@ -19,95 +115,95 @@
      =========================== */
 
   /* Color Primary */
-  --color-primary-50: #f2f7fc;
-  --color-primary-100: #e1edf8;
-  --color-primary-200: #cadff3;
-  --color-primary-300: #a5cbeb;
-  --color-primary-400: #7bafdf;
-  --color-primary-500: #5b92d6;
-  --color-primary-600: #4779c9;
-  --color-primary-700: #3d65b8;
-  --color-primary-800: #375396;
-  --color-primary-900: #314877;
-  --color-primary-950: #1f2a44;
+  --color-primary-50: hsl(var(--heroui-primary-50));
+  --color-primary-100: hsl(var(--heroui-primary-100));
+  --color-primary-200: hsl(var(--heroui-primary-200));
+  --color-primary-300: hsl(var(--heroui-primary-300));
+  --color-primary-400: hsl(var(--heroui-primary-400));
+  --color-primary-500: hsl(var(--heroui-primary-500));
+  --color-primary-600: hsl(var(--heroui-primary-600));
+  --color-primary-700: hsl(var(--heroui-primary-700));
+  --color-primary-800: hsl(var(--heroui-primary-800));
+  --color-primary-900: hsl(var(--heroui-primary-900));
+  --color-primary-950: hsl(var(--heroui-primary-950));
 
   /* Color Secondary */
-  --color-secondary-50: #ecefff;
-  --color-secondary-100: #dde1ff;
-  --color-secondary-200: #c2c8ff;
-  --color-secondary-300: #9ca2ff;
-  --color-secondary-400: #7875ff;
-  --color-secondary-500: #6b5bff;
-  --color-secondary-600: #5836f5;
-  --color-secondary-700: #4c2ad8;
-  --color-secondary-800: #3d25ae;
-  --color-secondary-900: #352689;
-  --color-secondary-950: #211650;
+  --color-secondary-50: hsl(var(--heroui-secondary-50));
+  --color-secondary-100: hsl(var(--heroui-secondary-100));
+  --color-secondary-200: hsl(var(--heroui-secondary-200));
+  --color-secondary-300: hsl(var(--heroui-secondary-300));
+  --color-secondary-400: hsl(var(--heroui-secondary-400));
+  --color-secondary-500: hsl(var(--heroui-secondary-500));
+  --color-secondary-600: hsl(var(--heroui-secondary-600));
+  --color-secondary-700: hsl(var(--heroui-secondary-700));
+  --color-secondary-800: hsl(var(--heroui-secondary-800));
+  --color-secondary-900: hsl(var(--heroui-secondary-900));
+  --color-secondary-950: hsl(var(--heroui-secondary-950));
 
   /* Color Success */
-  --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-200: #bbf7d0;
-  --color-success-300: #86efac;
-  --color-success-400: #4ade80;
-  --color-success-500: #22c55e;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-success-800: #166534;
-  --color-success-900: #14532d;
-  --color-success-950: #052e16;
+  --color-success-50: hsl(var(--heroui-success-50));
+  --color-success-100: hsl(var(--heroui-success-100));
+  --color-success-200: hsl(var(--heroui-success-200));
+  --color-success-300: hsl(var(--heroui-success-300));
+  --color-success-400: hsl(var(--heroui-success-400));
+  --color-success-500: hsl(var(--heroui-success-500));
+  --color-success-600: hsl(var(--heroui-success-600));
+  --color-success-700: hsl(var(--heroui-success-700));
+  --color-success-800: hsl(var(--heroui-success-800));
+  --color-success-900: hsl(var(--heroui-success-900));
+  --color-success-950: hsl(var(--heroui-success-950));
 
   /* Color Warning */
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-200: #fde68a;
-  --color-warning-300: #fcd34d;
-  --color-warning-400: #fbbf24;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-  --color-warning-700: #b45309;
-  --color-warning-800: #92400e;
-  --color-warning-900: #78350f;
-  --color-warning-950: #451a03;
+  --color-warning-50: hsl(var(--heroui-warning-50));
+  --color-warning-100: hsl(var(--heroui-warning-100));
+  --color-warning-200: hsl(var(--heroui-warning-200));
+  --color-warning-300: hsl(var(--heroui-warning-300));
+  --color-warning-400: hsl(var(--heroui-warning-400));
+  --color-warning-500: hsl(var(--heroui-warning-500));
+  --color-warning-600: hsl(var(--heroui-warning-600));
+  --color-warning-700: hsl(var(--heroui-warning-700));
+  --color-warning-800: hsl(var(--heroui-warning-800));
+  --color-warning-900: hsl(var(--heroui-warning-900));
+  --color-warning-950: hsl(var(--heroui-warning-950));
 
   /* Color Error */
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-200: #fecaca;
-  --color-error-300: #fca5a5;
-  --color-error-400: #f87171;
-  --color-error-500: #ef4444;
-  --color-error-600: #dc2626;
-  --color-error-700: #b91c1c;
-  --color-error-800: #991b1b;
-  --color-error-900: #7f1d1d;
-  --color-error-950: #450a0a;
+  --color-error-50: hsl(var(--heroui-error-50));
+  --color-error-100: hsl(var(--heroui-error-100));
+  --color-error-200: hsl(var(--heroui-error-200));
+  --color-error-300: hsl(var(--heroui-error-300));
+  --color-error-400: hsl(var(--heroui-error-400));
+  --color-error-500: hsl(var(--heroui-error-500));
+  --color-error-600: hsl(var(--heroui-error-600));
+  --color-error-700: hsl(var(--heroui-error-700));
+  --color-error-800: hsl(var(--heroui-error-800));
+  --color-error-900: hsl(var(--heroui-error-900));
+  --color-error-950: hsl(var(--heroui-error-950));
 
   /* Color Info */
-  --color-info-50: #ecfeff;
-  --color-info-100: #cffafe;
-  --color-info-200: #a5f3fc;
-  --color-info-300: #67e8f9;
-  --color-info-400: #22d3ee;
-  --color-info-500: #06b6d4;
-  --color-info-600: #0891b2;
-  --color-info-700: #0e7490;
-  --color-info-800: #155e75;
-  --color-info-900: #164e63;
-  --color-info-950: #083344;
+  --color-info-50: hsl(var(--heroui-info-50));
+  --color-info-100: hsl(var(--heroui-info-100));
+  --color-info-200: hsl(var(--heroui-info-200));
+  --color-info-300: hsl(var(--heroui-info-300));
+  --color-info-400: hsl(var(--heroui-info-400));
+  --color-info-500: hsl(var(--heroui-info-500));
+  --color-info-600: hsl(var(--heroui-info-600));
+  --color-info-700: hsl(var(--heroui-info-700));
+  --color-info-800: hsl(var(--heroui-info-800));
+  --color-info-900: hsl(var(--heroui-info-900));
+  --color-info-950: hsl(var(--heroui-info-950));
 
   /* Color Neutral */
-  --color-neutral-50: #f7f9fa;
-  --color-neutral-100: #edf0f2;
-  --color-neutral-200: #dde1e4;
-  --color-neutral-300: #c2c7cb;
-  --color-neutral-400: #a5abb1;
-  --color-neutral-500: #7f858c;
-  --color-neutral-600: #5e636a;
-  --color-neutral-700: #44484e;
-  --color-neutral-800: #2e3237;
-  --color-neutral-900: #222529;
-  --color-neutral-950: #1e1e1e;
+  --color-neutral-50: hsl(var(--heroui-neutral-50));
+  --color-neutral-100: hsl(var(--heroui-neutral-100));
+  --color-neutral-200: hsl(var(--heroui-neutral-200));
+  --color-neutral-300: hsl(var(--heroui-neutral-300));
+  --color-neutral-400: hsl(var(--heroui-neutral-400));
+  --color-neutral-500: hsl(var(--heroui-neutral-500));
+  --color-neutral-600: hsl(var(--heroui-neutral-600));
+  --color-neutral-700: hsl(var(--heroui-neutral-700));
+  --color-neutral-800: hsl(var(--heroui-neutral-800));
+  --color-neutral-900: hsl(var(--heroui-neutral-900));
+  --color-neutral-950: hsl(var(--heroui-neutral-950));
 
   /* ===========================
      SPACING SCALE

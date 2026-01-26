@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { ColorTheme } from "@/lib/colorPalettes";
+import { ColorTheme } from "@/presentation/lib/colorPalettes";
 
 interface ColorContextType {
   colorTheme: ColorTheme;
