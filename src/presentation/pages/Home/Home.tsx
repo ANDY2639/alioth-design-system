@@ -1,8 +1,6 @@
 "use client";
 
-import Body from "@/presentation/components/Typography/Body";
-import Caption from "@/presentation/components/Typography/Caption";
-import Heading from "@/presentation/components/Typography/Heading";
+import { Body, Caption, Heading } from "@/presentation/components/Typography";
 
 const Home = () => {
   return (

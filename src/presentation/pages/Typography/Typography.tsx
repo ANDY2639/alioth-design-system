@@ -1,6 +1,6 @@
 "use client";
 
-import Heading from "@/presentation/components/Typography/Heading";
+import { Heading } from "@/presentation/components/Typography";
 import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from "@/presentation/data/typography";
 
 export default function Typography() {
