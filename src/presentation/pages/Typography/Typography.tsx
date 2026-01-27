@@ -1,17 +1,8 @@
 "use client";
 
-import { Heading } from "@/presentation/components/Typography";
+import Heading from "@/presentation/components/Typography/Heading";
 import { TYPOGRAPHY_CONFIG, TYPOGRAPHY_USE_CASES, TYPOGRAPHY_GUIDELINES } from "@/presentation/data/typography";
 
-/**
- * Typography - Documentación visual del sistema tipográfico Alioth
- *
- * Muestra todos los estilos tipográficos con:
- * - Estilos base (H1-H6, Body1-2, Caption)
- * - Variantes funcionales
- * - Ejemplos de uso real
- * - Guías de cuándo usar cada estilo
- */
 export default function Typography() {
   return (
     <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 transition-colors duration-300 space-y-12">
