@@ -1,11 +1,11 @@
 "use client";
 
 import { useColorTheme } from "@/presentation/contexts/Color/useColorTheme";
-import { COLOR_PALETTES, ColorTheme } from "@/presentation/data/colorPalettes";
+import { COLOR_PALETTES } from "@/presentation/data/colorPalettes";
 
 export default function DemoButton() {
   const { colorTheme } = useColorTheme();
-  const palette = COLOR_PALETTES[colorTheme as ColorTheme];
+  const palette = COLOR_PALETTES[colorTheme];
 
   if (!palette) return null;
 
@@ -14,7 +14,7 @@ export default function DemoButton() {
 
   return (
     <button
-      className="px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg active:scale-95"
+      className="px-4 py-2 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg active:scale-95"
       style={{
         backgroundColor: baseColor,
         borderColor: baseColor,

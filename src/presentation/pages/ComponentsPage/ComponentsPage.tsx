@@ -1,6 +1,3 @@
-"use client";
-
-import { Button } from "@heroui/react";
 import DemoBadge from "./components/DemoBadge/DemoBadge";
 import DemoButton from "./components/DemoButton/DemoButton";
 import DemoCard from "./components/DemoCard/DemoCard";
@@ -18,9 +15,6 @@ export default function ComponentsPage() {
       <div className="mb-8 pb-8 border-b border-neutral-200 dark:border-neutral-700">
         <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Botón</h3>
         <DemoButton />
-        <Button size="lg" color="primary">
-          Botón
-        </Button>
       </div>
 
       {/* Badge */}
