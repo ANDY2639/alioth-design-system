@@ -1,14 +1,4 @@
-import { Input as InputUI, InputProps as InputUIProps } from "@heroui/react";
-
-interface HelpText {
-  onClick?: VoidFunction;
-  content: React.ReactNode;
-}
-
-export interface InputProps extends InputUIProps {
-  name: string;
-  helpText?: HelpText;
-}
+import { InputUI, InputProps } from "./InputConfig";
 
 export const Input = ({ ref, name, helpText, ...rest }: InputProps) => {
   return (

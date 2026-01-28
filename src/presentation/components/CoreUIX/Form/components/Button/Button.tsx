@@ -1,8 +1,4 @@
-import { Button as ButtonUI, ButtonProps as ButtonUIProps } from "@heroui/react";
-
-export interface ButtonProps extends ButtonUIProps {
-  minWidth?: string;
-}
+import { ButtonUI, ButtonProps } from "./ButtonConfig";
 
 export const Button = ({ ref, children, ...rest }: ButtonProps) => {
   return (
