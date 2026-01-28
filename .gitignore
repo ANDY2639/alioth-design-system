@@ -42,3 +42,9 @@ next-env.d.ts
 
 # sisyphus
 /.sisyphus
+
+# claude
+/.claude
+
+# opencode
+/.opencode

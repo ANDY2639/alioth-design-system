@@ -1,0 +1,127 @@
+/* ===========================
+   Alioth Design System - Theme Variables
+   Definition explicit of modes Light and Dark
+   =========================== */
+
+/* ===========================
+   LIGHT MODE (Default)
+   =========================== */
+
+:root {
+  /* Background & Foreground - Light Mode */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* ===========================
+     HEROUI Color Variables (Converted from HEX)
+     =========================== */
+
+  /* Primary */
+  --heroui-primary-50: 210 63% 97%;
+  --heroui-primary-100: 209 62% 93%;
+  --heroui-primary-200: 209 63% 87%;
+  --heroui-primary-300: 207 64% 78%;
+  --heroui-primary-400: 209 61% 68%;
+  --heroui-primary-500: 213 60% 60%;
+  --heroui-primary-600: 217 55% 53%;
+  --heroui-primary-700: 220 50% 48%;
+  --heroui-primary-800: 222 46% 40%;
+  --heroui-primary-900: 220 42% 33%;
+  --heroui-primary-950: 222 37% 19%;
+
+  /* Secondary */
+  --heroui-secondary-50: 231 100% 96%;
+  --heroui-secondary-100: 233 100% 93%;
+  --heroui-secondary-200: 234 100% 88%;
+  --heroui-secondary-300: 236 100% 81%;
+  --heroui-secondary-400: 241 100% 73%;
+  --heroui-secondary-500: 246 100% 68%;
+  --heroui-secondary-600: 251 91% 59%;
+  --heroui-secondary-700: 252 69% 51%;
+  --heroui-secondary-800: 251 65% 41%;
+  --heroui-secondary-900: 249 57% 34%;
+  --heroui-secondary-950: 251 57% 20%;
+
+  /* Success */
+  --heroui-success-50: 138 76% 97%;
+  --heroui-success-100: 141 84% 93%;
+  --heroui-success-200: 141 79% 85%;
+  --heroui-success-300: 142 77% 73%;
+  --heroui-success-400: 142 69% 58%;
+  --heroui-success-500: 142 71% 45%;
+  --heroui-success-600: 142 76% 36%;
+  --heroui-success-700: 142 72% 29%;
+  --heroui-success-800: 143 64% 24%;
+  --heroui-success-900: 144 61% 20%;
+  --heroui-success-950: 145 80% 10%;
+
+  /* Warning */
+  --heroui-warning-50: 48 100% 96%;
+  --heroui-warning-100: 48 96% 89%;
+  --heroui-warning-200: 48 97% 77%;
+  --heroui-warning-300: 46 97% 65%;
+  --heroui-warning-400: 43 96% 56%;
+  --heroui-warning-500: 38 92% 50%;
+  --heroui-warning-600: 32 95% 44%;
+  --heroui-warning-700: 26 90% 37%;
+  --heroui-warning-800: 23 83% 31%;
+  --heroui-warning-900: 22 78% 26%;
+  --heroui-warning-950: 21 92% 14%;
+
+  /* Danger */
+  --heroui-danger: 0 84% 60%;
+  --heroui-danger-50: 0 86% 97%;
+  --heroui-danger-100: 0 93% 94%;
+  --heroui-danger-200: 0 96% 89%;
+  --heroui-danger-300: 0 94% 82%;
+  --heroui-danger-400: 0 91% 71%;
+  --heroui-danger-500: 0 84% 60%;
+  --heroui-danger-600: 0 72% 51%;
+  --heroui-danger-700: 0 74% 42%;
+  --heroui-danger-800: 0 70% 35%;
+  --heroui-danger-900: 0 63% 31%;
+  --heroui-danger-950: 0 75% 15%;
+
+  /* Info */
+  --heroui-info-50: 183 100% 96%;
+  --heroui-info-100: 185 96% 90%;
+  --heroui-info-200: 186 94% 82%;
+  --heroui-info-300: 187 92% 69%;
+  --heroui-info-400: 188 86% 53%;
+  --heroui-info-500: 189 94% 43%;
+  --heroui-info-600: 192 91% 36%;
+  --heroui-info-700: 193 82% 31%;
+  --heroui-info-800: 194 70% 27%;
+  --heroui-info-900: 196 64% 24%;
+  --heroui-info-950: 197 79% 15%;
+
+  /* Neutral */
+  --heroui-neutral-50: 200 23% 97%;
+  --heroui-neutral-100: 204 16% 94%;
+  --heroui-neutral-200: 206 11% 88%;
+  --heroui-neutral-300: 207 8% 78%;
+  --heroui-neutral-400: 210 7% 67%;
+  --heroui-neutral-500: 212 5% 52%;
+  --heroui-neutral-600: 215 6% 39%;
+  --heroui-neutral-700: 216 7% 29%;
+  --heroui-neutral-800: 213 9% 20%;
+  --heroui-neutral-900: 214 9% 15%;
+  --heroui-neutral-950: 0 0% 12%;
+}
+
+/* ===========================
+   DARK MODE
+   Activated with: @media (prefers-color-scheme: dark)
+   =========================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background & Foreground - Dark Mode */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    /* Note: The color variables (--heroui-*) remain the same in dark mode.
+       HeroUI handles the internal inversion of tones according to the context.
+       If you need different colors for dark mode, you can redefine them here. */
+  }
+}
