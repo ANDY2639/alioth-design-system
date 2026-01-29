@@ -9,8 +9,8 @@
 
 :root {
   /* Background & Foreground - Light Mode */
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
 
   /* ===========================
      HEROUI Color Variables (Converted from HEX)
@@ -114,14 +114,9 @@
    Activated with: @media (prefers-color-scheme: dark)
    =========================== */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    /* Background & Foreground - Dark Mode */
     --background: #0a0a0a;
     --foreground: #ededed;
-
-    /* Note: The color variables (--heroui-*) remain the same in dark mode.
-       HeroUI handles the internal inversion of tones according to the context.
-       If you need different colors for dark mode, you can redefine them here. */
   }
-}
+} */

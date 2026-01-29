@@ -13,6 +13,7 @@ const items: SidebarItem[] = [
   { id: "colors", label: "Colores", icon: "🎨" },
   { id: "typography", label: "Tipografía", icon: "✍️" },
   { id: "components", label: "Componentes", icon: "🧩" },
+  { id: "forms", label: "Fomularios", icon: "📝" },
 ];
 
 export default function Sidebar() {
